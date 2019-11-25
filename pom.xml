@@ -27,7 +27,7 @@
         <commons-lang.version>2.6</commons-lang.version>
         <commons-collections.version>3.2.2</commons-collections.version>
         <commons-beanutils.version>1.9.3</commons-beanutils.version>
-        <hutool.version>4.0.5</hutool.version>
+        <hutool.version>5.0.6</hutool.version>
     </properties>
 
     <dependencyManagement>
