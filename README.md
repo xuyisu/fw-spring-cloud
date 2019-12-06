@@ -4,9 +4,9 @@
  |  技术栈   |  版本 |
  | --- | --- |
  |  jdk |   1.8.0_161  |
- |  SpringBoot   | 2.1.6.RELEASE   |
- |  SpringCloud   | Greenwich.SR2   |
- |  Hutool   | 5.0.6   |
+ |  SpringBoot   | 2.2.1.RELEASE   |
+ |  SpringCloud   | Hoxton.RELEASE   |
+ |  Hutool   | 5.0.7   |
  
 #### 模块说明
 ```lua
