@@ -13,7 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>fw-register-eureka</module>
-        <module>fw-register-consule</module>
+        <module>fw-register-consul</module>
         <module>fw-register-zookeeper</module>
     </modules>
 

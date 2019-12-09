@@ -1,19 +1,19 @@
-package com.yisu.register.zookeeper;
+package com.yisu.register.consul;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  *
  * @Author xuyisu
  * @Date 2019/12/6
  */
-@EnableEurekaServer
+@EnableDiscoveryClient
 @SpringBootApplication
-public class FwRegisterEurekaApplication {
+public class FwRegisterConsulApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwRegisterEurekaApplication.class, args);
+        SpringApplication.run(FwRegisterConsulApplication.class, args);
     }
 
 
