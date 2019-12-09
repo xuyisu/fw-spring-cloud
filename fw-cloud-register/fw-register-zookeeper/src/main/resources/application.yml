@@ -1,0 +1,13 @@
+server:
+  port: 8661
+spring:
+  application:
+    name: fw-register-zookeeper
+  cloud:
+    zookeeper:
+      connectString: 127.0.0.1:2181  #可修改为自己的zk
+      discovery:
+        register: true
+        enabled: true
+        instance-id: 1
+        root: /fw-cloud
