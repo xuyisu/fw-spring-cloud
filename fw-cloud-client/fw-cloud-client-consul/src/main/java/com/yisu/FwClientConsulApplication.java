@@ -1,8 +1,9 @@
-package com.yisu.register.consul;
+package com.yisu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  *
@@ -11,9 +12,10 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FwRegisterConsulApplication {
+@EnableFeignClients
+public class FwClientConsulApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwRegisterConsulApplication.class, args);
+        SpringApplication.run(FwClientConsulApplication.class, args);
     }
 
 
