@@ -1,0 +1,13 @@
+server:
+  port: 8662
+spring:
+  application:
+    name: fw-client-zookeeper-demo
+  cloud:
+    zookeeper:
+      connect-string: 127.0.0.1:2181
+      discovery:
+        register: true
+        enabled: true
+        instance-id: 2
+        root: /fw-cloud
