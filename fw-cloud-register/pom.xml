@@ -12,7 +12,6 @@
     <artifactId>fw-cloud-register</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>register-eureka</module>
         <module>fw-register-eureka</module>
         <module>fw-register-consule</module>
         <module>fw-register-zookeeper</module>

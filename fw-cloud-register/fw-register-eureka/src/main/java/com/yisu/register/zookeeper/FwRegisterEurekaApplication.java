@@ -1,4 +1,4 @@
-package com.yisu.register.eureka;
+package com.yisu.register.zookeeper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
