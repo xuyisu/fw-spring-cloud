@@ -1,0 +1,9 @@
+server:
+  port: 8771
+spring:
+  application:
+    name: fw-cloud-feign
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

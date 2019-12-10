@@ -11,6 +11,8 @@
     <modules>
         <module>fw-cloud-register</module>
         <module>fw-cloud-client</module>
+        <module>fw-cloud-feign</module>
+        <module>fw-cloud-ribbon</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
