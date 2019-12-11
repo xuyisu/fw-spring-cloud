@@ -3,6 +3,17 @@
 /.project
 /.settings/
 /target/
+target/
 /.idea/
 .idea/*
 *.iml
+/log/
+*.log
+### temp ignore ###
+*.cache
+*.diff
+*.patch
+*.tmp
+*.java~
+*.properties~
+*.xml~
