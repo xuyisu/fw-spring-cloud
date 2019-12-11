@@ -1,0 +1,11 @@
+server:
+  port: 8762
+spring:
+  application:
+    name: fw-register-eureka-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
