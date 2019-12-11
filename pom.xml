@@ -13,6 +13,7 @@
         <module>fw-cloud-client</module>
         <module>fw-cloud-feign</module>
         <module>fw-cloud-ribbon</module>
+        <module>fw-cloud-ribbon-server</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

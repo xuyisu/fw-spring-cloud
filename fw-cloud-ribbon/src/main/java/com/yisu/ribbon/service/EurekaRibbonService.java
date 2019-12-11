@@ -1,5 +1,6 @@
 package com.yisu.ribbon.service;
 
+import com.yisu.ribbon.entity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -41,5 +42,10 @@ public class EurekaRibbonService {
             }
         }
         return services;
+    }
+
+    public User findUserById(Long id) {
+        // http://服务提供者的serviceId/url
+        return restTemplate.getForObject("http://fw-cloud-feign-server/user/" + id, User.class);
     }
 }
