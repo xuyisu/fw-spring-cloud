@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @author xuyisu
@@ -19,8 +20,8 @@ public class EurekaRibbonController {
     private EurekaRibbonService eurekaRibbonService;
 
     @RequestMapping("/info")
-    public String ribbonInfo() {
-        String message = eurekaRibbonService.getInfo();
-        return message;
+    public List<String> ribbonInfo() {
+        List<String> eurekaServices = eurekaRibbonService.getEurekaServices();
+        return eurekaServices;
     }
 }
