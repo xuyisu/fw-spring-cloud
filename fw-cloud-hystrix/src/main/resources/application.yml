@@ -1,0 +1,9 @@
+server:
+  port: 8675
+spring:
+  application:
+    name: fw-cloud-hystrix
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
