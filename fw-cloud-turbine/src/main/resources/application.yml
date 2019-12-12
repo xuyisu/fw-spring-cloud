@@ -1,0 +1,16 @@
+server:
+  port: 8678
+spring:
+  application:
+    name: fw-hystrix-feign-dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+turbine:
+  app-config: fw-hystrix-ribbon, fw-hystrix-feign
+  aggregator:
+    cluster-config: default
+  cluster-name-expression: new String("default")
+  #更改turbine连接的默认uri ,默认为actuator/hystrix.stream
+  instanceUrlSuffix: hystrix.stream
