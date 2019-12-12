@@ -16,6 +16,7 @@
         <module>fw-cloud-ribbon-server</module>
         <module>fw-cloud-hystrix-ribbon</module>
         <module>fw-cloud-hystrix-feign</module>
+        <module>fw-cloud-hystrix-dashboard</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
