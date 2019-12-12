@@ -2,7 +2,7 @@ server:
   port: 8772
 spring:
   application:
-    name: fw-cloud-feign
+    name: fw-feign
 eureka:
   client:
     service-url:

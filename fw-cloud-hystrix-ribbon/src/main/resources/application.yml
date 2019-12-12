@@ -2,7 +2,7 @@ server:
   port: 8675
 spring:
   application:
-    name: fw-cloud-hystrix-ribbon
+    name: fw-hystrix-ribbon
 eureka:
   client:
     service-url:

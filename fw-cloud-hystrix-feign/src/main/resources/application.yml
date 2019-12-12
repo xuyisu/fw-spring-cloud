@@ -2,7 +2,7 @@ server:
   port: 8676
 spring:
   application:
-    name: fw-cloud-hystrix-feign
+    name: fw-hystrix-feign
 eureka:
   client:
     service-url:
