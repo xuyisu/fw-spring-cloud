@@ -13,9 +13,9 @@ import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 @EnableHystrix
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FwHystrixApplication {
+public class FwHystrixRibbonApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwHystrixApplication.class, args);
+        SpringApplication.run(FwHystrixRibbonApplication.class, args);
     }
 
 
