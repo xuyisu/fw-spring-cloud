@@ -19,6 +19,7 @@
         <module>fw-cloud-hystrix-dashboard</module>
         <module>fw-cloud-turbine</module>
         <module>fw-cloud-gateways</module>
+        <module>fw-cloud-config-center</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

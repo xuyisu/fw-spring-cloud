@@ -1,0 +1,17 @@
+server:
+  port: 8778
+spring:
+  application:
+    name: fw-config-native
+  profiles:
+    active: native # 加载本地配置
+  cloud:
+    config:
+      server:
+        native:
+          # 不指定路径的话，默认搜索 resources 目录
+          search-locations: classpath:/config
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
