@@ -18,6 +18,7 @@
         <module>fw-cloud-hystrix-feign</module>
         <module>fw-cloud-hystrix-dashboard</module>
         <module>fw-cloud-turbine</module>
+        <module>fw-cloud-gateways</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -31,7 +32,7 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <mysql.version>6.0.6</mysql.version>
-        <hutool.version>5.0.7</hutool.version>
+        <hutool.version>5.0.6</hutool.version>
     </properties>
 
     <dependencyManagement>
@@ -56,6 +57,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
         </dependency>
     </dependencies>
 

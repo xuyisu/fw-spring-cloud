@@ -1,0 +1,23 @@
+server:
+  port: 8678
+spring:
+  application:
+    name: fw-hystrix-feign-dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+zuul:
+#  prefix: /api  前缀，根据需要添加
+  routes:
+    fw-feign-server: /feign/**
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 7000
+ribbon:
+  connetTimeout: 500
+  readTimeout: 5000
