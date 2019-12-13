@@ -20,6 +20,7 @@
         <module>fw-cloud-turbine</module>
         <module>fw-cloud-gateways</module>
         <module>fw-cloud-config-center</module>
+        <module>fw-cloud-springboot</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
