@@ -1,7 +1,7 @@
-package com.yisu.ribbon.server.service.impl;
+package com.yisu.client.eureka.service.impl;
 
-import com.yisu.ribbon.server.entity.User;
-import com.yisu.ribbon.server.service.UserService;
+import com.yisu.client.eureka.entity.User;
+import com.yisu.client.eureka.service.UserService;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 
@@ -30,7 +30,6 @@ public class UserServiceImpl implements UserService {
         }
         return userList.get(0);
     }
-
     /**
      * 模拟数据库初始化数据
      * @return
