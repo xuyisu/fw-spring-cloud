@@ -13,13 +13,25 @@
 fw-spring-cloud  -- https://github.com/xuyisu/fw-sping-cloud.git
 
 fw-spring-cloud
-└── fw-spring-client -- 客户端 
-     ├── fw-spring-client-consule -- 客户端-consule版
-     ├── fw-spring-client-eureka -- 客户端-eureka版
-     └── fw-spring-client-zookeeper -- 客户端-zookeeper版
-└── fw-spring-register -- 注册中心 
-     ├── fw-spring-register-consule -- 注册中心-consule版
-     ├── fw-spring-register-eureka -- 注册中心-eureka版
-     └── fw-spring-register-zookeeper -- 注册中心-zookeeper版
+└── fw-cloud-client -- 客户端 
+└── fw-cloud-config-center -- 配置中心 
+└── fw-cloud-feign -- REST请求 
+└── fw-cloud-gateways -- 网关
+└── fw-cloud-hystrix-dashboard -- 断路器监控
+└── fw-cloud-hystrix-feign -- 断路器结合feign
+└── fw-cloud-hystrix-ribbon -- 断路器结合ribbon
+└── fw-cloud-register -- 注册中心
+└── fw-cloud-ribbon -- ribbon
+└── fw-cloud-ribbon-server -- ribbon server
+└── fw-cloud-springboot -- springboot
+ 
 	 
 ```
+#### 教程正在编写中。。。
+
+
+### 交流群
+>里面上传了很多架构、技术文档、共同进步
+
+![](images/security技术交流群二维码.png)
+

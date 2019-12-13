@@ -5,7 +5,5 @@ spring:
     name: fw-register-eureka
 eureka:
   client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    prefer-ip-address: true
+    register-with-eureka: false
+    fetch-registry: false
