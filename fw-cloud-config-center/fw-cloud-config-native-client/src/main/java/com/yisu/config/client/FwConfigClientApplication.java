@@ -1,9 +1,8 @@
-package com.yisu.config.natives;
+package com.yisu.config.client;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.config.server.EnableConfigServer;
 
 /**
  * @author xuyisu
@@ -11,10 +10,9 @@ import org.springframework.cloud.config.server.EnableConfigServer;
  * @date 2019/12/12
  */
 @EnableDiscoveryClient
-@EnableConfigServer
 @SpringBootApplication
-public class FwConfigNativeServerApplication {
+public class FwConfigClientApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwConfigNativeServerApplication.class, args);
+        SpringApplication.run(FwConfigClientApplication.class, args);
     }
 }

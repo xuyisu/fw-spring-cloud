@@ -2,15 +2,17 @@ server:
   port: 8778
 spring:
   application:
-    name: fw-config-native
-  profiles:
-    active: native # 加载本地配置
+    name: fw-config-server
+#  profiles:
+#    active: native # 加载本地配置
   cloud:
     config:
       server:
-        native:
-          # 不指定路径的话，默认搜索 resources 目录
-          search-locations: classpath:/config
+        git:
+          uri: https://github.com/xuyisu/fw-sping-cloud.git
+          username: 账号
+          password: 密码
+          search-paths: fw-cloud-config-repo
 eureka:
   client:
     service-url:
