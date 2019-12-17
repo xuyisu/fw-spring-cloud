@@ -2,4 +2,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
-version: eureka-1.0
+version: eureka-2.0
