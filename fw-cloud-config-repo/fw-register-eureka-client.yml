@@ -1,8 +1,3 @@
-server:
-  port: 8780
-spring:
-  application:
-    name: fw-register-eureka-client
 eureka:
   client:
     service-url:
