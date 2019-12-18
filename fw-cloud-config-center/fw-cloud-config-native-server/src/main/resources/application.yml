@@ -30,6 +30,10 @@ spring:
       server:
         native:
           searchLocations: classpath:/native #  绝对路径 如 file:D:/workspace/fw-repo 相对路径：如classpath:/native
+        overrides:
+          version: 覆盖优先1.0
+      allow-override: true
+
 eureka:
   client:
     service-url:
