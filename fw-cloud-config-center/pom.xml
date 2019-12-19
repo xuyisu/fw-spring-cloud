@@ -15,6 +15,7 @@
         <module>fw-cloud-config-native-server</module>
         <module>fw-cloud-config-native-client</module>
         <module>fw-cloud-config-amqp-client</module>
+        <module>fw-cloud-config-kafka-client</module>
     </modules>
 
 

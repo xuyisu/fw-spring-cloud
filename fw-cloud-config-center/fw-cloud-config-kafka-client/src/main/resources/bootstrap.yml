@@ -1,0 +1,26 @@
+server:
+  port: 8779
+spring:
+  application:
+    name: fw-register-eureka-client
+  cloud:
+    config: #自己指定的和服务发现的2选1
+#      uri: http://localhost:8778/  自己指定的
+      profile: dev
+      label: master
+      discovery: #基于服务发现的
+        enabled: true
+        service-id: fw-config-server
+    # kafka
+    stream:
+      kafka:
+        binder:
+          brokers: localhost:9092
+    bus:
+      trace:
+        enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info,bus-refresh
