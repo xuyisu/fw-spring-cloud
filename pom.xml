@@ -21,6 +21,8 @@
         <module>fw-cloud-gateways</module>
         <module>fw-cloud-config-center</module>
         <module>fw-cloud-springboot</module>
+        <module>fw-cloud-tracking</module>
+        <module>fw-cloud-mq</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

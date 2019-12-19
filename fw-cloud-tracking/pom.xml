@@ -9,12 +9,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fw-cloud-config-center</artifactId>
+    <artifactId>fw-cloud-tracking</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>fw-cloud-config-native-server</module>
-        <module>fw-cloud-config-native-client</module>
-        <module>fw-cloud-config-amqp-client</module>
+        <module>fw-cloud-tracking-zipkin</module>
     </modules>
 
 
