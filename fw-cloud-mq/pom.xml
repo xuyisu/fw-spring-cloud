@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>fw-cloud-mq-rabbitmq</module>
+        <module>fw-cloud-mq-kafka</module>
     </modules>
 
 
