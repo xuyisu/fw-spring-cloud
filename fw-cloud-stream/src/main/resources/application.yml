@@ -1,0 +1,14 @@
+server:
+  port: 8782
+#自定义，默认也会已guest用户 绑定 localhost:5672
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: fwcloud
+    password: fwcloud
+  cloud:
+    stream:
+      bindings:
+        input:
+          destination: raw-sensor-data

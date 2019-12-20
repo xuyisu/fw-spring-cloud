@@ -23,6 +23,7 @@
         <module>fw-cloud-springboot</module>
         <module>fw-cloud-tracking</module>
         <module>fw-cloud-mq</module>
+        <module>fw-cloud-stream</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
