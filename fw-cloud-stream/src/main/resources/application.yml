@@ -11,4 +11,4 @@ spring:
     stream:
       bindings:
         input:
-          destination: raw-sensor-data
+          destination: fw-sensor-data
