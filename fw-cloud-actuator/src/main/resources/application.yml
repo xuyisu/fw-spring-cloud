@@ -1,0 +1,9 @@
+server:
+  port: 8863
+spring:
+  application:
+    name: fw-cloud-actuator
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

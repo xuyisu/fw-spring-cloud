@@ -1,5 +1,5 @@
 server:
-  port: 8762
+  port: 8763
 spring:
   application:
     name: fw-register-eureka-client
@@ -7,3 +7,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+#      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
