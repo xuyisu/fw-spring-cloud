@@ -1,7 +1,7 @@
 package com.yisu.ribbon.config;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
+import com.yisu.ribbon.config.custom.MyRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -23,11 +23,9 @@ public class EurekaRibbonConfig {
 
     @Bean
     public IRule ribbonRule() {
-
-        //默认ZoneAvoidanceRule请求,实现自定义的规则
         //自定义成随机
-
-        return new RandomRule();
+//        return new RandomRule();
+        return new MyRule();
     }
 
 }

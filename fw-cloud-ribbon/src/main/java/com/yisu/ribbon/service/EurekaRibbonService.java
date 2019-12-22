@@ -46,6 +46,6 @@ public class EurekaRibbonService {
 
     public User findUserById(Long id) {
         // http://服务提供者的serviceId/url
-        return restTemplate.getForObject("http://fw-cloud-feign-server/user/" + id, User.class);
+        return restTemplate.getForObject("http://fw-cloud-ribbon-server/user/" + id, User.class);
     }
 }
