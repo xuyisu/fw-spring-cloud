@@ -11,6 +11,6 @@ eureka:
 #  eureka:
 #    enabled: false #禁用eurake
 ## 禁用 Eureka 后手动配置服务地址
-#fw-cloud-feign-server: #服务名称
+#fw-cloud-ribbon-server: #服务名称
 #  ribbon:
 #    listOfServers: localhost:8773,localhost:8774
