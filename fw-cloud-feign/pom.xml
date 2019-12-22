@@ -31,9 +31,9 @@
         </dependency>
 
         <!--处理 No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon? -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
+        </dependency>-->
     </dependencies>
 </project>
