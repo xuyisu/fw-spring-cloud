@@ -12,7 +12,7 @@
     <artifactId>fw-cloud-tracking</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>fw-cloud-tracking-zipkin</module>
+        <module>fw-cloud-tracking-zipkin-server</module>
     </modules>
 
 
