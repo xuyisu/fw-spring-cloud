@@ -11,9 +11,6 @@
 
     <artifactId>fw-cloud-nacos-client</artifactId>
 
-    <properties>
-        <nacos.version>0.9.0.RELEASE</nacos.version>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -23,7 +20,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-            <version>${nacos.version}</version>
         </dependency>
     </dependencies>
 </project>
