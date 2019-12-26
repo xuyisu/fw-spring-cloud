@@ -1,12 +1,16 @@
 spring:
   application:
-    name: fw-cloud-nacos-register
+    name: fw-cloud-nacos-client
   cloud:
     nacos:
       config:
         server-addr: ${nacos.ip}:8848
         group: DEFAULT_GROUP
-        prefix: application
+        prefix: client-application
         file-extension: yaml
       discovery:
         server-addr: ${nacos.ip}:8848
+ribbon:
+  http:
+    client:
+      enabled: true

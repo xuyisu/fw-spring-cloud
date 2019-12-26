@@ -16,6 +16,7 @@
         <module>fw-cloud-client-consul</module>
         <module>fw-cloud-client-zookeeper</module>
         <module>fw-cloud-feign-api</module>
+        <module>fw-cloud-client-nacos</module>
     </modules>
 
 
