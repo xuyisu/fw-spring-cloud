@@ -15,6 +15,7 @@
         <module>fw-register-eureka</module>
         <module>fw-register-consul</module>
         <module>fw-register-zookeeper</module>
+        <module>fw-register-nacos</module>
     </modules>
 
 

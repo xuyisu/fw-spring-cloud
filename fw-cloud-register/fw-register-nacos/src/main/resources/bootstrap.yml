@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: fw-cloud-nacos
+  cloud:
+    nacos:
+      config:
+        server-addr: ${nacos.ip}:8848
+        group: DEFAULT_GROUP
+        prefix: application
+        file-extension: yaml
+      discovery:
+        server-addr: ${nacos.ip}:8848
