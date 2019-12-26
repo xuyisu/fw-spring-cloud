@@ -2,7 +2,11 @@
  
  1. 下载zipkin.jar
  
-[**下载地址**](https://dl.bintray.com/openzipkin/maven/io/zipkin/java/zipkin-server)
+ ```bash
+ curl -sSL https://zipkin.io/quickstart.sh | bash -s
+ ```
+ 
+[**下载地址**](https://search.maven.org/remote_content?g=io.zipkin&a=zipkin-server&v=LATEST&c=exec)
 
 2. 启动zipkin-server
 

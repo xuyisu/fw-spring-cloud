@@ -1,0 +1,28 @@
+server:
+  port: 8772
+spring:
+  application:
+    name: fw-cloud-zipkin-client-b
+  #zipkin 链路监控时打开
+  zipkin:
+    base-url: http://localhost:9411/
+    service:
+      name: ${spring.application.name}
+      #使用默认 http 方式收集 span 需要配置此项
+      #sender.type=web
+    #sleuth 使用 rabbitmq 来向 zipkin 发送数据
+    sender:
+      type: rabbit
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: fwcloud
+    password: fwcloud
+  #  #设置采样率默认为 0.1 注意之前的版本是percentage 新版本中更换为 probability
+  sleuth:
+    sampler:
+      probability: 1
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
