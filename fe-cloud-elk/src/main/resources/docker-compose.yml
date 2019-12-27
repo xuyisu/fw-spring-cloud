@@ -1,0 +1,36 @@
+version: '3'
+services:
+  elasticsearch:
+    image: elasticsearch:6.4.1
+    container_name: elasticsearch
+    environment:
+      - "cluster.name=elasticsearch" #集群名称为 elasticsearch
+      - "discovery.type=single-node" #单节点启动
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m" #jvm内存分配为 512MB
+    volumes:
+      - /fwcloud/elasticsearch/plugins:/usr/share/elasticsearch/plugins
+      - /fwcloud/elasticsearch/data:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+  kibana:
+    image: kibana:6.4.1
+    container_name: kibana
+    links:
+      - elasticsearch:es #配置elasticsearch域名为 es
+    depends_on:
+      - elasticsearch
+    environment:
+      - "elasticsearch.hosts=http://es:9200" #因为上面配置了域名，所以这里可以简写为 http://es:9200
+    ports:
+      - 5601:5601
+  logstash:
+    image: logstash:6.4.1
+    container_name: logstash
+    volumes:
+      - /fwcloud/logstash/logstash-fwcloud.conf:/usr/share/logstash/pipeline/logstash.conf
+    depends_on:
+      - elasticsearch
+    links:
+      - elasticsearch:es
+    ports:
+      - 4560:4560

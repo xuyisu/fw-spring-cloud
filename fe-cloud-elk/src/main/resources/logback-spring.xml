@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration scan="true" scanPeriod="60 seconds" debug="false">
     <contextName>fwcloud</contextName>
-    <property name="log.path" value="log/fw-register-zookeeper" />
-    <property name="log.maxHistory" value="15" />
-    <property name="log.colorPattern" value="%magenta(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %yellow(%thread) %green(%logger) %msg%n"/>
+    <property name="log.path" value="log/fw-cloud-elk"/>
+    <property name="log.maxHistory" value="15"/>
+    <property name="log.colorPattern"
+              value="%magenta(%d{yyyy-MM-dd HH:mm:ss}) %highlight(%-5level) %yellow(%thread) %green(%logger) %msg%n"/>
     <property name="log.pattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5level %thread %logger %msg%n"/>
 
     <!--输出到控制台-->
@@ -43,12 +44,19 @@
         </filter>
     </appender>
 
+    <!--输出到 logstash的 appender-->
+    <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+        <destination>${logstash.ip}:4560</destination>
+        <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
+    </appender>
+
     <root level="debug">
-        <appender-ref ref="console" />
+        <appender-ref ref="console"/>
     </root>
 
     <root level="info">
-        <appender-ref ref="file_info" />
-        <appender-ref ref="file_error" />
+        <appender-ref ref="file_info"/>
+        <appender-ref ref="file_error"/>
+        <appender-ref ref="logstash" />
     </root>
 </configuration>

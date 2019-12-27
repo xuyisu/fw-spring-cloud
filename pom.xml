@@ -25,6 +25,7 @@
         <module>fw-cloud-mq</module>
         <module>fw-cloud-stream</module>
         <module>fw-cloud-actuator</module>
+        <module>fe-cloud-elk</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
