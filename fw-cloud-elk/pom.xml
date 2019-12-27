@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fe-cloud-elk</artifactId>
+    <artifactId>fw-cloud-elk</artifactId>
 
     <dependencies>
         <dependency>
