@@ -1,5 +1,6 @@
 package com.yisu.feign.service;
 
+import com.yisu.feign.config.FeignConfig;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 
@@ -8,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @description feign service
  * @date 2019/12/11
  */
-@FeignClient(value = "fw-register-eureka-client")
+@FeignClient(value = "fw-register-eureka-client",configuration = FeignConfig.class)
 //@FeignClient(value = "fw-register-eureka-client",path = "xxx")
 public interface EurekaFeignService {
 

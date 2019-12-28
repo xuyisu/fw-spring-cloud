@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @description
@@ -47,7 +48,11 @@ public class TestController {
 
 
     @GetMapping("/hello")
-    public String hello() {
+    public String hello() throws InterruptedException {
+
+        int millis = new Random().nextInt(3000);
+        System.out.println("client线程休眠时间："+millis);
+        Thread.sleep(millis);
         return "hello:"+serverPort;
     }
 }

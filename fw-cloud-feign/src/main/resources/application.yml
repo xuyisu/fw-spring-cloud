@@ -7,3 +7,48 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com.yisu: debug
+# 配置全局的超时时间
+#feign:
+#  client:
+#    config:
+#      default:
+#        connectTimeout: 10000
+#        readTimeout: 10000
+#      service-name:
+#        connectTimeout: 10000
+#        readTimeout: 10000
+
+#ribbon:
+#  ReadTimeout: 60000
+#  ConnectTimeout: 60000
+#service-name:
+#  ribbon:
+#    ReadTimeout: 30000
+#    ConnectTimeout: 30000
+
+#重试
+ribbon:
+  #配置首台服务器重试1次
+  MaxAutoRetries: 1
+  #配置其他服务器重试两次
+  MaxAutoRetriesNextServer: 2
+  #链接超时时间
+  ConnectTimeout: 500
+  #请求处理时间
+  ReadTimeout: 500
+  #每个操作都开启重试机制
+  OkToRetryOnAllOperations: true
+#配置断路器超时时间，默认是1000（1秒）
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2100
