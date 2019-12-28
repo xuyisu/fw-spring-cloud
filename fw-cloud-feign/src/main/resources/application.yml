@@ -30,25 +30,34 @@ logging:
 #    ConnectTimeout: 30000
 
 #重试
-ribbon:
-  #配置首台服务器重试1次
-  MaxAutoRetries: 1
-  #配置其他服务器重试两次
-  MaxAutoRetriesNextServer: 2
-  #链接超时时间
-  ConnectTimeout: 500
-  #请求处理时间
-  ReadTimeout: 500
-  #每个操作都开启重试机制
-  OkToRetryOnAllOperations: true
+#ribbon:
+#  #配置首台服务器重试1次
+#  MaxAutoRetries: 1
+#  #配置其他服务器重试两次
+#  MaxAutoRetriesNextServer: 2
+#  #链接超时时间
+#  ConnectTimeout: 500
+#  #请求处理时间
+#  ReadTimeout: 500
+#  #每个操作都开启重试机制
+#  OkToRetryOnAllOperations: true
 #配置断路器超时时间，默认是1000（1秒）
-feign:
-  hystrix:
-    enabled: true
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 2100
+#feign:
+#  hystrix:
+#    enabled: true
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 2100
+#GZIP 压缩配置
+#feign:
+#  compression:
+#    request:
+#      enabled: true
+#      mime-types: text/xml,application/xml,application/json
+#      min-request-size: 2048
+#    response:
+#      enabled: true

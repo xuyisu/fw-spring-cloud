@@ -50,9 +50,9 @@ public class TestController {
     @GetMapping("/hello")
     public String hello() throws InterruptedException {
 
-        int millis = new Random().nextInt(3000);
-        System.out.println("client线程休眠时间："+millis);
-        Thread.sleep(millis);
+//        int millis = new Random().nextInt(3000);
+//        System.out.println("client线程休眠时间："+millis);
+//        Thread.sleep(millis);
         return "hello:"+serverPort;
     }
 }

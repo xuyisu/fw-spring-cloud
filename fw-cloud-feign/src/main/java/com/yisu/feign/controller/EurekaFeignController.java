@@ -25,4 +25,6 @@ public class EurekaFeignController {
         log.info(message);
         return message;
     }
+
+
 }
