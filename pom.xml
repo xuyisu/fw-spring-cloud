@@ -27,6 +27,7 @@
         <module>fw-cloud-actuator</module>
         <module>fw-cloud-elk</module>
         <module>fw-cloud-feign-okhttp</module>
+        <module>fw-cloud-upload</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

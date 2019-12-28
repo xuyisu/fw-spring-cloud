@@ -1,9 +1,9 @@
 package com.yisu.feign.config;
 
 import feign.Logger;
-import feign.Request;
-import feign.Retryer;
 import feign.auth.BasicAuthRequestInterceptor;
+import org.springframework.cloud.openfeign.encoding.FeignAcceptGzipEncodingInterceptor;
+import org.springframework.cloud.openfeign.encoding.FeignClientEncodingProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -56,5 +56,6 @@ public class FeignConfig {
 ////        return new Retryer.Default();
 //        return  new Retryer.Default(100, 1000, 4);
 //    }
+
 
 }

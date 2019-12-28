@@ -19,12 +19,14 @@ public class EurekaFeignController {
     @Resource
     private EurekaFeignService eurekaFeignService;
 
+
     @GetMapping("/feignInfo")
     public String feignInfo() {
         String message = eurekaFeignService.hello();
         log.info(message);
         return message;
     }
+
 
 
 }

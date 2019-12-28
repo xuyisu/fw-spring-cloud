@@ -9,11 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fw-cloud-feign-okhttp</artifactId>
-
-    <properties>
-        <okhttp.version>10.7.0</okhttp.version>
-    </properties>
+    <artifactId>fw-cloud-upload</artifactId>
 
     <dependencies>
         <dependency>
@@ -23,19 +19,6 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign</groupId>
-            <artifactId>feign-okhttp</artifactId>
-            <version>${okhttp.version}</version>
         </dependency>
     </dependencies>
 </project>
