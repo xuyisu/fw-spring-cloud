@@ -1,0 +1,17 @@
+server:
+  port: 8771
+spring:
+  application:
+    name: fw-feign-okhtpp
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+logging:
+  level:
+    com.yisu: debug
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
