@@ -15,6 +15,7 @@
         <module>fw-cloud-feign-client</module>
         <module>fw-cloud-feign-okhttp</module>
         <module>fw-cloud-feign-api</module>
+        <module>fw-cloud-feign-without-springcloud</module>
     </modules>
     <properties>
         <form.version>3.8.0</form.version>
