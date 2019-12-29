@@ -13,9 +13,6 @@
         <module>fw-cloud-client</module>
         <module>fw-cloud-feign</module>
         <module>fw-cloud-ribbon</module>
-        <module>fw-cloud-hystrix-ribbon</module>
-        <module>fw-cloud-hystrix-feign</module>
-        <module>fw-cloud-hystrix-dashboard</module>
         <module>fw-cloud-turbine</module>
         <module>fw-cloud-gateways</module>
         <module>fw-cloud-config-center</module>
@@ -26,6 +23,7 @@
         <module>fw-cloud-actuator</module>
         <module>fw-cloud-elk</module>
         <module>fw-cloud-upload</module>
+        <module>fw-cloud-hystrix</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
