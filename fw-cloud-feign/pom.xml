@@ -10,44 +10,15 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fw-cloud-feign</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>fw-cloud-feign-client</module>
+        <module>fw-cloud-feign-okhttp</module>
+        <module>fw-cloud-feign-api</module>
+    </modules>
     <properties>
         <form.version>3.8.0</form.version>
     </properties>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-openfeign</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
 
-        <!-- Feign文件上传依赖-->
-        <dependency>
-            <groupId>io.github.openfeign.form</groupId>
-            <artifactId>feign-form</artifactId>
-            <version>${form.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>io.github.openfeign.form</groupId>
-            <artifactId>feign-form-spring</artifactId>
-            <version>${form.version}</version>
-        </dependency>
-
-        <!--处理 No Feign Client for loadBalancing defined. Did you forget to include spring-cloud-starter-netflix-ribbon? -->
-        <!--<dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>-->
-    </dependencies>
 </project>

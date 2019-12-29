@@ -10,25 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fw-cloud-ribbon</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>fw-cloud-ribbon-client</module>
+        <module>fw-cloud-ribbon-server</module>
+    </modules>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
-        </dependency>
-    </dependencies>
+
 
 
 </project>
