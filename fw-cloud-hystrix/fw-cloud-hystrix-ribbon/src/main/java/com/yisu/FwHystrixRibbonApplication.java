@@ -6,7 +6,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.hystrix.EnableHystrix;
 
 /**
- * 基于ribbon 实现负载均衡
  * @Author xuyisu
  * @Date 2019/12/6
  */
