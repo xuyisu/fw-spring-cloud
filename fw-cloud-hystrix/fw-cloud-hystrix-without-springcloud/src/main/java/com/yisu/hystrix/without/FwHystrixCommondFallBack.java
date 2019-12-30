@@ -12,7 +12,7 @@ public class FwHystrixCommondFallBack extends HystrixCommand<String> {
 
     private final String name;
     protected FwHystrixCommondFallBack(String name) {
-        super(HystrixCommandGroupKey.Factory.asKey("myGrop"));
+        super(HystrixCommandGroupKey.Factory.asKey("myGroup"));
         this.name=name;
     }
     @Override

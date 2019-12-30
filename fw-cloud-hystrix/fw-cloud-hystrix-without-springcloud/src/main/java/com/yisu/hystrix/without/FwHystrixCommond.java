@@ -8,13 +8,13 @@ import java.util.concurrent.Future;
 
 /**
  * @author xuyisu
- * @description
+ * @description 简单使用
  * @date 2019/12/30
  */
 public class FwHystrixCommond extends HystrixCommand<String> {
     private final String name;
     protected FwHystrixCommond(String name) {
-        super(HystrixCommandGroupKey.Factory.asKey("myGrop"));
+        super(HystrixCommandGroupKey.Factory.asKey("myGroup"));
         this.name=name;
     }
 

@@ -13,6 +13,7 @@
 
     <properties>
         <hystrix-core.version>1.5.18</hystrix-core.version>
+        <commons-configuration.version>1.10</commons-configuration.version>
     </properties>
     <dependencies>
         <dependency>
@@ -27,7 +28,7 @@
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
-            <version>1.10</version>
+            <version>${commons-configuration.version}</version>
         </dependency>
 
     </dependencies>
