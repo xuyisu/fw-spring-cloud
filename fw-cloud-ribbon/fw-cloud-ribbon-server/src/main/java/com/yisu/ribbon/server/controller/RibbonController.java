@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author xuyisu
@@ -28,6 +30,19 @@ public class RibbonController {
         User user = userService.getUserById(id);
         user.setRemark(user.getRemark()+":提供服务的是:"+url);
         return user;
+    }
+
+    @GetMapping("/list")
+    public List<User> getUserById(String  ids, HttpServletRequest req){
+        List<User> list=new ArrayList<>();
+        String[] splitIds = ids.split(",");
+        for (String id : splitIds) {
+            String url = req.getRequestURL().toString();
+            User user = userService.getUserById(Long.valueOf(id));
+            user.setRemark(user.getRemark()+":提供服务的是:"+url);
+            list.add(user);
+        }
+        return list;
     }
 
 }
