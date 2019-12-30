@@ -29,19 +29,16 @@ public class FwHystrixCommondCache extends HystrixCommand<String> {
 
     @Override
     protected String getCacheKey() {
-        return String.valueOf(this.name);
+        return this.name;
     }
 
-    //    public static void main(String[] args) {
-//        String test = new FwHystrixCommond("test").execute();
-//        System.out.println(test);
-//    }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         HystrixRequestContext context = HystrixRequestContext.initializeContext();
-        String test = new FwHystrixCommond("test").execute();
-        log.info(test);
-        Future<String> tesFuture = new FwHystrixCommondCache("test").queue();
-        log.info(tesFuture.get());
+        for (int i = 0; i <5 ; i++) {
+            FwHystrixCommondCache test = new FwHystrixCommondCache("test");
+            log.info(test.execute());
+        }
+        context.shutdown();
     }
 }

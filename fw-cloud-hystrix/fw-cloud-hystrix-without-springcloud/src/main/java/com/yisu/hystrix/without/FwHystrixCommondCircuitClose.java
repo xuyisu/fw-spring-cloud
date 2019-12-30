@@ -19,11 +19,11 @@ public class FwHystrixCommondCircuitClose {
                 "hystrix.command.default.circuitBreaker.requestVolumeThreshold", 3);
         boolean isTimeout = true;
         for (int i = 0; i < 10; i++) {
-            TestCommand c = new TestCommand(isTimeout);
+            MyCommand c = new MyCommand(isTimeout);
             c.execute();
 
             HystrixCommandMetrics.HealthCounts hc = c.getMetrics().getHealthCounts();
-            System.out.println("健康信息:" + hc.getTotalRequests());
+            System.out.println("健康数量:" + hc.getTotalRequests());
             if (c.isCircuitBreakerOpen()) {
                 isTimeout = false;
                 log.info("断路器打开了，第{}索引，等待休眠期结束",i);
@@ -33,10 +33,10 @@ public class FwHystrixCommondCircuitClose {
         }
     }
 
-    static class TestCommand extends HystrixCommand<String> {
+    static class MyCommand extends HystrixCommand<String> {
         private boolean isTimeout;
 
-        public TestCommand(boolean isTimeout) {
+        public MyCommand(boolean isTimeout) {
             super(Setter.withGroupKey(HystrixCommandGroupKey.Factory.asKey("ExampleGroup"))
                     .andCommandPropertiesDefaults(HystrixCommandProperties.Setter().withExecutionTimeoutInMilliseconds(500)));
             this.isTimeout = isTimeout;
@@ -48,7 +48,7 @@ public class FwHystrixCommondCircuitClose {
             } else {
                 Thread.sleep(200);
             }
-            return "";
+            return "success";
         }
 
         protected String getFallback() {

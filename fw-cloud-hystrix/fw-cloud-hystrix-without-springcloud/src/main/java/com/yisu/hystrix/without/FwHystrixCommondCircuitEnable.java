@@ -7,7 +7,6 @@ import com.netflix.hystrix.HystrixCommandProperties;
 import lombok.extern.slf4j.Slf4j;
 
 
-import static com.netflix.config.ConfigurationManager.*;
 
 /**
  * @author xuyisu

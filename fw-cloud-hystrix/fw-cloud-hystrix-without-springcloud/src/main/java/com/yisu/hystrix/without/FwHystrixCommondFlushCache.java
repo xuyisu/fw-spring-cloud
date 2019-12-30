@@ -49,17 +49,14 @@ public class FwHystrixCommondFlushCache extends HystrixCommand<String> {
         return this.name;
     }
 
-    //    public static void main(String[] args) {
-//        String test = new FwHystrixCommond("test").execute();
-//        System.out.println(test);
-//    }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         HystrixRequestContext context = HystrixRequestContext.initializeContext();
-        String test = new FwHystrixCommondFlushCache("test").execute();
-        log.info(test);
-//        FwHystrixCommondFlushCache.flushCache("test");
-        Future<String> tesFuture = new FwHystrixCommondFlushCache("test").queue();
-        log.info(tesFuture.get());
+        for (int i = 0; i <5 ; i++) {
+            FwHystrixCommondFlushCache test = new FwHystrixCommondFlushCache("test");
+            log.info(test.execute());
+//            FwHystrixCommondFlushCache.flushCache("test");
+        }
+        context.shutdown();
     }
 }
