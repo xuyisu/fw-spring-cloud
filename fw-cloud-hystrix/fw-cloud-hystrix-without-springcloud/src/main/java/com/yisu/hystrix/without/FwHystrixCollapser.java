@@ -12,7 +12,6 @@ import java.util.Collection;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author xuyisu
@@ -40,8 +39,10 @@ public class FwHystrixCollapser extends HystrixCollapser<List<String>, String, S
 
     @Override
     protected void mapResponseToRequests(List<String> strings, Collection<CollapsedRequest<String, String>> requests) {
-        AtomicInteger count = new AtomicInteger();
-        requests.stream().forEach(request -> request.setResponse(strings.get(count.getAndIncrement())));
+        int count=0;
+        for (CollapsedRequest<String, String> request : requests) {
+            request.setResponse(strings.get(count++));
+        }
     }
 
     private static final class FwBatchCommand extends HystrixCommand<List<String>> {
