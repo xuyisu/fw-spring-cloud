@@ -10,11 +10,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>fw-cloud-hystrix</artifactId>
+    <packaging>pom</packaging>
 
     <modules>
         <module>fw-cloud-hystrix-ribbon</module>
         <module>fw-cloud-hystrix-feign</module>
         <module>fw-cloud-hystrix-dashboard</module>
+        <module>fw-cloud-hystrix-without-springcloud</module>
     </modules>
 
 </project>
