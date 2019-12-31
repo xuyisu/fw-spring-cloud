@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: fw-register-eureka
+#  security:  开启密码功能需要
+#    user:
+#      name: fwcloud
+#      password: 123456
 eureka:
   client:
     register-with-eureka: false
