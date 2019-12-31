@@ -17,6 +17,7 @@
         <module>fw-cloud-hystrix-feign</module>
         <module>fw-cloud-hystrix-dashboard</module>
         <module>fw-cloud-hystrix-without-springcloud</module>
+        <module>fw-cloud-hystrix-turbine</module>
     </modules>
 
 </project>

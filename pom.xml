@@ -13,7 +13,6 @@
         <module>fw-cloud-client</module>
         <module>fw-cloud-feign</module>
         <module>fw-cloud-ribbon</module>
-        <module>fw-cloud-turbine</module>
         <module>fw-cloud-gateways</module>
         <module>fw-cloud-config-center</module>
         <module>fw-cloud-springboot</module>

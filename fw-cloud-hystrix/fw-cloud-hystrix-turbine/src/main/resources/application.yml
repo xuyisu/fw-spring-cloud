@@ -12,5 +12,4 @@ turbine:
   aggregator:
     cluster-config: default
   cluster-name-expression: new String("default")
-  #更改turbine连接的默认uri ,默认为actuator/hystrix.stream
-  instanceUrlSuffix: hystrix.stream
+  instanceUrlSuffix: actuator/hystrix.stream

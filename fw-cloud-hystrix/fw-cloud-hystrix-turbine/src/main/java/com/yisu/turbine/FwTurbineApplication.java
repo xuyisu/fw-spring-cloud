@@ -6,7 +6,6 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
- * 基于feign
  * @Author xuyisu
  * @Date 2019/12/6
  */
