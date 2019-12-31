@@ -10,3 +10,22 @@ eureka:
 feign:
   hystrix:
     enabled: true #开启hystrix
+#hystrix:
+#  command:
+#    EurekaFeignService#hello(): 指定接口方法的
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 500  #超时时间
+#      circuitBreaker:
+#        requestVolumeThreshold: 3 #请求并发数
+#全局的
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 500  #超时时间
+      circuitBreaker:
+        requestVolumeThreshold: 3 #请求并发数
