@@ -2,7 +2,7 @@ server:
   port: 8678
 spring:
   application:
-    name: fw-hystrix-feign-dashboard
+    name: fw-gateways-zuul
 eureka:
   client:
     service-url:

@@ -14,6 +14,7 @@
     <modules>
         <module>fw-cloud-gateways-zuul</module>
         <module>fw-cloud-gateways-gateway</module>
+        <module>fw-cloud-gateways-zuul-simple</module>
     </modules>
 
 </project>
