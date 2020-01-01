@@ -4,6 +4,10 @@ spring:
   application:
     name: fw-gateways-zuul-simple
 zuul:
+#  prefix: /api #根据需要开启
   routes:
     simple:
       url: http://localhost:8764
+  host:
+    max-total-connections: 300 #设置目标主机的最大连接数，默认200
+    max-per-route-connections: 30 #设置每个主机的初始化连接数，默认20
