@@ -1,5 +1,5 @@
 server:
-  port: 8678
+  port: 8679
 spring:
   application:
     name: fw-gateways-zuul
@@ -10,7 +10,9 @@ eureka:
 zuul:
 #  prefix: /api  前缀，根据需要添加
   routes:
-    fw-cloud-ribbon-server: /ribbon/**
+    fw-cloud-ribbon-server:
+      path: /ribbon/**
+#      url: forward:/local  本地跳转打开
 hystrix:
   command:
     default:
