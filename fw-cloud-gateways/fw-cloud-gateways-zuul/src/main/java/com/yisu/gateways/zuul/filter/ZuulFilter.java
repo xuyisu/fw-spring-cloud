@@ -26,7 +26,9 @@ public class ZuulFilter extends com.netflix.zuul.ZuulFilter {
 
     @Override
     public boolean shouldFilter() {
-        return true; // 是否执行该过滤器，此处为true，说明需要过滤
+        RequestContext requestContext=RequestContext.getCurrentContext();
+        Boolean isShould = (Boolean) requestContext.get("isShould");
+        return null==isShould?true:isShould; // 是否执行该过滤器，此处为true，说明需要过滤
     }
 
     @Override

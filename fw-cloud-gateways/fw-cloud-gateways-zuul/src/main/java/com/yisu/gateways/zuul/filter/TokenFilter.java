@@ -44,6 +44,10 @@ public class TokenFilter extends ZuulFilter {
             ctx.setResponseStatusCode(200);
             ctx.set("code", 1);
         } else {
+            //失败之后通知后续不应该执行了
+            RequestContext requestContext=RequestContext.getCurrentContext();
+            requestContext.set("isShould",false);
+
             ctx.setSendZuulResponse(false); //不对其进行路由
             ctx.setResponseStatusCode(401);
             HttpServletResponse response = ctx.getResponse();
