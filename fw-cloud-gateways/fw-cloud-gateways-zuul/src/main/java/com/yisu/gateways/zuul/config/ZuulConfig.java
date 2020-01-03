@@ -1,5 +1,6 @@
 package com.yisu.gateways.zuul.config;
 
+import com.yisu.gateways.zuul.filter.ErrorFilter;
 import com.yisu.gateways.zuul.filter.TokenFilter;
 import com.yisu.gateways.zuul.filter.ZuulFilter;
 import org.springframework.context.annotation.Bean;
@@ -23,5 +24,10 @@ public class ZuulConfig {
     @Bean
     public ZuulFilter zuulFilter(){
         return new ZuulFilter();
+    }
+
+    @Bean
+    public ErrorFilter errorFilter(){
+        return new ErrorFilter();
     }
 }

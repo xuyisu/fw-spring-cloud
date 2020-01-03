@@ -33,6 +33,9 @@ public class TokenFilter extends ZuulFilter {
 
     @Override
     public Object run() {
+
+//        int i=10/0;
+
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         log.info("我是TokenFilter");
@@ -45,8 +48,7 @@ public class TokenFilter extends ZuulFilter {
             ctx.set("code", 1);
         } else {
             //失败之后通知后续不应该执行了
-            RequestContext requestContext=RequestContext.getCurrentContext();
-            requestContext.set("isShould",false);
+            ctx.set("isShould",false);
 
             ctx.setSendZuulResponse(false); //不对其进行路由
             ctx.setResponseStatusCode(401);

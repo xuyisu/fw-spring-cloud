@@ -13,6 +13,9 @@ zuul:
     fw-cloud-ribbon-server:
       path: /ribbon/**
 #      url: forward:/local  本地跳转打开
+#  TokenFilter:
+#    route:
+#      disabled: true
 hystrix:
   command:
     default:
