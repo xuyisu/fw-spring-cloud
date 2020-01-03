@@ -10,7 +10,7 @@ eureka:
 zuul:
 #  prefix: /api  前缀，根据需要添加
   routes:
-    fw-feign-server: /feign/**
+    fw-cloud-ribbon-server: /ribbon/**
 hystrix:
   command:
     default:

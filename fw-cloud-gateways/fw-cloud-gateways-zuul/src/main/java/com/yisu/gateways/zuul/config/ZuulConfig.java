@@ -11,8 +11,11 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 public class ZuulConfig {
-    @Bean
-    public TokenFilter tokenFilter(){
-        return new TokenFilter();
-    }
+    /**
+     * Zuul 过滤器配置，如果不想启动，注释掉即可
+     */
+//    @Bean
+//    public TokenFilter tokenFilter(){
+//        return new TokenFilter();
+//    }
 }
