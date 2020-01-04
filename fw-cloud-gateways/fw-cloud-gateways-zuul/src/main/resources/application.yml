@@ -12,17 +12,28 @@ zuul:
   routes:
     fw-cloud-ribbon-server:
       path: /ribbon/**
+  retryable: true
 #      url: forward:/local  本地跳转打开
 #  TokenFilter:
 #    route:
 #      disabled: true
+#重试
+ribbon:
+  #配置首台服务器重试1次
+  MaxAutoRetries: 1
+  #配置其他服务器重试两次
+  MaxAutoRetriesNextServer: 2
+  #链接超时时间
+  ConnectTimeout: 500
+  #请求处理时间
+  ReadTimeout: 500
+  #每个操作都开启重试机制
+  OkToRetryOnAllOperations: true
+#回退超时时间
 hystrix:
   command:
     default:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 7000
-ribbon:
-  connetTimeout: 500
-  readTimeout: 5000
+            timeoutInMilliseconds: 1000
