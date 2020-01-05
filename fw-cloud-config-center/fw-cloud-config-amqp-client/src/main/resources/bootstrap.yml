@@ -5,7 +5,7 @@ spring:
     name: fw-register-eureka-client
   cloud:
     config: #自己指定的和服务发现的2选1
-#      uri: http://localhost:8778/  自己指定的
+#      uri: http://localhost:8778/  自己指定
       profile: dev
       label: master
       discovery: #基于服务发现的
