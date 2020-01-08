@@ -3,6 +3,14 @@ server:
 spring:
   application:
     name: fw-gateways-gateway
+  profiles:
+    active: after_route
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+---
+spring:
   #网关配置
   cloud:
     gateway:
@@ -11,8 +19,7 @@ spring:
           uri: lb://fw-cloud-ribbon-server
           predicates: #此路由与 2020年1月08日17:42 Shanghai Time之后的所有请求相匹配，若请求时的时间不是After配置的时间时，则会返回404 not found
           - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+  profiles: after_route
+
+
 
