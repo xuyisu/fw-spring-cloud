@@ -4,7 +4,7 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: rate_limiter_route
+    active: hystrix_route
 
 eureka:
   client:
@@ -54,3 +54,28 @@ spring:
     password: ${redis.pwd}
     port: 6379
   profiles: rate_limiter_route
+---
+#熔断配置
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: retry_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - name: Retry
+            args:
+              retries: 3
+              series:
+                - SERVER_ERROR
+              statuses:
+                - INTERNAL_SERVER_ERROR
+                - BAD_GATEWAY
+              methods:
+                - GET
+              exceptions:
+                - java.io.IOException
+                - java.util.concurrent.TimeoutException
+  profiles: retry_route
