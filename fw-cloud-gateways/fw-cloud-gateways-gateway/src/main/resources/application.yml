@@ -1,10 +1,11 @@
 server:
-  port: 8699
+  port: 8711
 spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: hystrix_route
+    active: rate_limiter_route
+
 eureka:
   client:
     service-url:
@@ -32,3 +33,24 @@ hystrix:
         isolation:
           thread:
             timeoutInMilliseconds: 3000
+---
+#熔断配置
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rate_limiter_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+            - name: RequestRateLimiter
+              args:
+                redis-rate-limiter.replenishRate: 1
+                redis-rate-limiter.burstCapacity: 1
+                key-resolver: "#{@userKeyResolver}"
+  redis:
+    host: ${redis.host}
+    password: ${redis.pwd}
+    port: 6379
+  profiles: rate_limiter_route

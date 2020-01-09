@@ -4,7 +4,7 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: weight_route
+    active: after_route
 eureka:
   client:
     service-url:
@@ -239,3 +239,16 @@ spring:
           filters:
             - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
   profiles: dedupe_response_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: preserve_host_route  #PreserveHostHeader GatewayFilter Factory没有参数。 此过滤器设置路由过滤器将检查的请求属性，以确定是否应发送原始主机头，而不是http客户端确定的主机头
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - PreserveHostHeader
+  profiles: preserve_host_route
