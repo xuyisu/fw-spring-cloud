@@ -4,22 +4,185 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: after_route
+    active: weight_route
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 ---
 spring:
-  #网关配置
   cloud:
     gateway:
       routes:
         - id: after_route
           uri: lb://fw-cloud-ribbon-server
-          predicates: #此路由与 2020年1月08日17:42 Shanghai Time之后的所有请求相匹配，若请求时的时间不是After配置的时间时，则会返回404 not found
+          predicates: 
           - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
   profiles: after_route
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: before_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Before=2091-01-08T18:30:11.965+08:00[Asia/Shanghai]
+  profiles: before_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: between_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Between=2020-01-08T18:30:11.965+08:00[Asia/Shanghai],2091-01-08T18:30:11.965+08:00[Asia/Shanghai]
+  profiles: between_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: cookie_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Cookie=fwcloud, hello
+  profiles: cookie_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Header=X-Request-Id, \d+
+  profiles: header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Host=**.fwcloud.top
+  profiles: host_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: method_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Method=GET,POST
+  profiles: method_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: host_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Path=/user/{segment},/blue/{segment}
+  profiles: host_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: query_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Query=green
+  profiles: query_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: remoteaddr_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - RemoteAddr=192.168.1.1/24
+  profiles: remoteaddr_route
+
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: weight_high
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Weight=group1, 8
+        - id: weight_low
+          uri: lb://fw-cloud-ribbon-server-bak #修改配置，换一个服务名启动
+          predicates:
+              - Weight=group1, 2
+  profiles: weight_route
+
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: prefixpath_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates: 
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters: #前缀
+            - PrefixPath= /gateway
+  profiles: prefixpath_route
 
 
 
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rewritepath_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Path=/gateway/**
+          filters:
+            - RewritePath=/gateway/(?<segment>.*), /$\{segment}
+  profiles: rewritepath_route
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setpath_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Path=/{segment}
+          filters:
+            - SetPath=/user/{segment}
+  profiles: setpath_route
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: strippath_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Path=/gateway/**
+          filters:
+            - StripPrefix=1
+  profiles: strippath_route
