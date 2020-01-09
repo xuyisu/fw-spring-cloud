@@ -135,6 +135,7 @@ spring:
   profiles: weight_route
 
 
+
 ---
 spring:
   cloud:
@@ -186,3 +187,55 @@ spring:
           filters:
             - StripPrefix=1
   profiles: strippath_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: add_request_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+            - AddRequestHeader=X-Request-id, fwcloud
+  profiles: add_request_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: add_request_parameter_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+            - AddRequestParameter=sys, fwcloud
+  profiles: add_request_parameter_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: add_response_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+            - AddResponseHeader=sys, fwcloud
+  profiles: add_response_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dedupe_response_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+  profiles: dedupe_response_header_route
