@@ -4,7 +4,7 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: after_route
+    active: default_path_route
 eureka:
   client:
     service-url:
@@ -187,6 +187,19 @@ spring:
           filters:
             - StripPrefix=1
   profiles: strippath_route
+
+---
+spring:
+  cloud:
+    gateway:
+      default-filters:
+        - StripPrefix=1
+      routes:
+        - id: strippath_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+            - Path=/gateway/**
+  profiles: default_path_route
 
 ---
 spring:
