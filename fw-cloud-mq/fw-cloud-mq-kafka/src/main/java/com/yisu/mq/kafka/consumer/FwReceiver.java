@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Slf4j
 public class FwReceiver {
 
-    @KafkaListener(topics = "test")
+    @KafkaListener(topics = "fwcloud")
     public void onMessage(String message){
         log.info(message);
     }
