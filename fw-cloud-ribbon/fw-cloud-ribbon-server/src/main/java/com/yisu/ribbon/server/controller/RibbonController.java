@@ -27,12 +27,12 @@ public class RibbonController {
 
     @GetMapping("/{id:\\d+}")
     public User getUserById(@PathVariable Long id, HttpServletRequest req) throws InterruptedException {
-        int millis = new Random().nextInt(3000);
-        System.out.println("client线程休眠时间："+millis);
-        Thread.sleep(millis);
-        if(millis>1000){
-            throw new RuntimeException("error");
-        }
+//        int millis = new Random().nextInt(3000);
+//        System.out.println("client线程休眠时间："+millis);
+//        Thread.sleep(millis);
+//        if(millis>1000){
+//            throw new RuntimeException("error");
+//        }
         String url = req.getRequestURL().toString();
         User user = userService.getUserById(id);
         user.setRemark(user.getRemark()+":提供服务的是:"+url);

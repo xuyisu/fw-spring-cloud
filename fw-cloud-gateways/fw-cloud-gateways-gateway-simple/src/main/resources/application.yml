@@ -4,7 +4,7 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: default_path_route
+    active: after_route
 eureka:
   client:
     service-url:
