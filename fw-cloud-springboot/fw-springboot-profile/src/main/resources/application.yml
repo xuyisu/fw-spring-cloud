@@ -1,0 +1,17 @@
+server:
+  port: 8773
+spring:
+  application:
+    name: fw-profile
+  profiles:
+    active: dev
+
+---
+spring:
+  profiles: default
+version: default
+
+---
+spring:
+  profiles: dev
+version: dev

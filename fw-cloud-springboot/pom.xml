@@ -13,5 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>fw-springboot-hello</module>
+        <module>fw-springboot-swagger</module>
+        <module>fw-springboot-profile</module>
     </modules>
 </project>
