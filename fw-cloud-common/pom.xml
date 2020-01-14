@@ -9,12 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fw-cloud-springboot</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>fw-springboot-hello</module>
-        <module>fw-springboot-swagger</module>
-        <module>fw-springboot-profile</module>
-        <module>fw-springboot-international</module>
-    </modules>
+    <artifactId>fw-cloud-common</artifactId>
+
+
 </project>

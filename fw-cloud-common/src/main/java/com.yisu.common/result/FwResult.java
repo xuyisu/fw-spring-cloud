@@ -1,4 +1,4 @@
-package com.yisu.gateways.gateway.result;
+package com.yisu.common.result;
 
 
 import lombok.Data;

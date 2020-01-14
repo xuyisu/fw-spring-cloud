@@ -23,6 +23,7 @@
         <module>fw-cloud-elk</module>
         <module>fw-cloud-upload</module>
         <module>fw-cloud-hystrix</module>
+        <module>fw-cloud-common</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -74,6 +75,11 @@
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>${hutool.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-configuration-processor</artifactId>
+            <optional>true</optional>
         </dependency>
     </dependencies>
 

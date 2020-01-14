@@ -1,15 +1,13 @@
 package com.yisu.gateways.zuul.controller;
 
 import cn.hutool.core.util.StrUtil;
-import com.yisu.gateways.zuul.result.FwResult;
-import org.apache.http.protocol.ResponseDate;
+import com.yisu.common.result.FwResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.context.request.ServletWebRequest;
-import org.springframework.web.context.request.WebRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;

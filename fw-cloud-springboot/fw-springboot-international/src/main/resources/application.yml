@@ -1,0 +1,11 @@
+server:
+  port: 8774
+#设置国际化配置文件存放在classpath:/i18n目录下
+spring:
+  messages:
+    basename: i18n/messages
+    cache-duration: PT15M #"spring.messages.cache-seconds" 在Spring Boot 2.0.4之后已弃用，不设置就会一直缓存，如果没有指定持续时间后缀，则将使用秒,我们设置15分钟
+    encoding: UTF-8
+    always-use-message-format: false #是否总是应用MessageFormat规则，甚至解析没有参数的消息，默认true
+    fallback-to-system-locale: true # 如果没有找到特定地区的文件，是否返回到系统区域，默认false
+    use-code-as-default-message: false # 是否使用消息代码作为默认消息，而不是抛出“NoSuchMessageException”，建议仅在开发过程中。，默认false

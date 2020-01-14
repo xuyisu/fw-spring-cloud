@@ -1,6 +1,6 @@
 package com.yisu.gateways.gateway.controller;
 
-import com.yisu.gateways.gateway.result.FwResult;
+import com.yisu.common.result.FwResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

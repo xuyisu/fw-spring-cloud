@@ -1,9 +1,8 @@
 package com.yisu.gateways.zuul.fallback;
 
-import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.netflix.zuul.context.RequestContext;
-import com.yisu.gateways.zuul.result.FwResult;
+import com.yisu.common.result.FwResult;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
