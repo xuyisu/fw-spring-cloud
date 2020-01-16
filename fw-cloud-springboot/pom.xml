@@ -16,5 +16,6 @@
         <module>fw-springboot-swagger</module>
         <module>fw-springboot-profile</module>
         <module>fw-springboot-international</module>
+        <module>fw-springboot-lock</module>
     </modules>
 </project>
