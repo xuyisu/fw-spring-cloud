@@ -23,6 +23,7 @@
         <module>fw-cloud-upload</module>
         <module>fw-cloud-hystrix</module>
         <module>fw-cloud-common</module>
+        <module>fw-cloud-admin</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

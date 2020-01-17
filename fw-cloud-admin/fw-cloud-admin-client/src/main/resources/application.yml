@@ -1,0 +1,26 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:8762	#server端地址
+        username: admin	#对应server端的账号密码，不配置就监控不到这个client。
+        password: admin
+        instance:
+          service-base-url: http://localhost:8766	#client地址，
+          #不配置的情况下，在打包的时候会有提示。不影响运行。
+  application:
+    name: admin-client
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+info:
+  version: @project.version@
+  groupId: @project.groupId@
+  artifactId: @project.artifactId@
+server:
+  port: 8766

@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+
+  boot:
+    admin:
+      ui:
+        title: ${spring.application.name}
+#邮件配置开始
+#      notify:
+#        mail:
+#          from: ***@163.com
+#          to: ***@qq.com
+#  mail:
+#    host: smtp.163.com
+#    username: ***@163.com
+#    password: ***
+#邮件配置结束
+server:
+  port: 8762
+
+

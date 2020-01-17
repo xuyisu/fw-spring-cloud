@@ -1,0 +1,44 @@
+spring:
+  application:
+    name: admin-server
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+#邮件配置开始
+#  boot:
+#    admin:
+#      notify:
+#        mail:
+#          from: ***@163.com
+#          to: ***@qq.com
+#  mail:
+#    host: smtp.163.com
+#    username: ***@163.com
+#    password: ***
+#邮件配置结束
+server:
+  port: 8762
+eureka:
+  client:
+    registryFetchIntervalSeconds: 5
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+
