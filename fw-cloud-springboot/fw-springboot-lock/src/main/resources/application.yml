@@ -1,0 +1,9 @@
+server:
+  port: 8773
+# redisson lock
+redisson:
+  address:  redis://****:6379
+  password: ****
+#redisson:
+#  address:  redis://${redisip}:6379
+#  password: ${redispwd}
