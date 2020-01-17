@@ -1,0 +1,7 @@
+server:
+  port: 8801
+spring:
+  redis:
+    host: ${redisip}
+    port: 6379
+    password: ${pwd}
