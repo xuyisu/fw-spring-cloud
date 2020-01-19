@@ -1,14 +1,14 @@
 package com.yisu.ribbon.server.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.yisu.ribbon.server.entity.User;
 import com.yisu.ribbon.server.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -20,6 +20,7 @@ import java.util.Random;
  */
 @RestController
 @RequestMapping("user")
+@Slf4j
 public class RibbonController {
 
     @Autowired
@@ -39,8 +40,32 @@ public class RibbonController {
         return user;
     }
 
+    /**
+     * 配合gateway
+     * @return
+     * @throws InterruptedException
+     */
+    @GetMapping("/header")
+    public String header(@RequestHeader(value = "Host", required = false)  String host,
+                         @RequestHeader(value = "Blue", required = false)  String blue,
+                         @RequestHeader(value = "X-Request-Red", required = false)  String requestRed) {
+
+        StringBuilder sp=new StringBuilder();
+//        if(StrUtil.isNotBlank(host)){
+//            sp.append("Host:").append(host).append(System.lineSeparator());
+//        }
+        if(StrUtil.isNotBlank(host)){
+            sp.append("Blue:").append(blue).append(System.lineSeparator());
+        }
+        if(StrUtil.isNotBlank(host)){
+            sp.append("X-Request-Red:").append(requestRed).append(System.lineSeparator());
+        }
+        return sp.toString();
+    }
+
     @GetMapping("/list")
     public List<User> getUserById(String  ids, HttpServletRequest req){
+        log.info("ids,{}",ids);
         List<User> list=new ArrayList<>();
         String[] splitIds = ids.split(",");
         for (String id : splitIds) {
@@ -51,5 +76,8 @@ public class RibbonController {
         }
         return list;
     }
+
+
+
 
 }
