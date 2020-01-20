@@ -5,9 +5,9 @@ spring:
     name: fw-gateways-gateway
   profiles:
     active: after_route
-  cloud:
-    gateway:
-      enabled: false
+#  cloud:
+#    gateway:
+#      enabled: false
 eureka:
   client:
     service-url:
