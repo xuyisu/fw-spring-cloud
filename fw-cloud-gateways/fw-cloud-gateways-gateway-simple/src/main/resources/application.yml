@@ -4,7 +4,10 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: rewriteresponseheader_route
+    active: after_route
+  cloud:
+    gateway:
+      enabled: false
 eureka:
   client:
     service-url:
@@ -90,11 +93,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: host_route
+        - id: host_path_route
           uri: lb://fw-cloud-ribbon-server
           predicates:
             - Path=/user/{segment},/blue/{segment}
-  profiles: host_route
+  profiles: host_path_route
 
 ---
 spring:
@@ -124,7 +127,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: weight_high
+        - id: weight_heigh
           uri: lb://fw-cloud-ribbon-server
           predicates:
             - Weight=group1, 8
@@ -243,17 +246,17 @@ spring:
 
 
 ---
-#spring:
-#  cloud:
-#    gateway:
-#      routes:
-#        - id: preserve_host_route  #PreserveHostHeader GatewayFilter Factory没有参数。 此过滤器设置路由过滤器将检查的请求属性，以确定是否应发送原始主机头，而不是http客户端确定的主机头
-#          uri: lb://fw-cloud-ribbon-server
-#          predicates:
-#          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
-#          filters:
-#          - PreserveHostHeader
-#  profiles: preserve_host_route
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: preserve_host_route  #PreserveHostHeader GatewayFilter Factory没有参数。 此过滤器设置路由过滤器将检查的请求属性，以确定是否应发送原始主机头，而不是http客户端确定的主机头
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - PreserveHostHeader
+  profiles: preserve_host_route
 
 ---
 spring:
@@ -354,3 +357,56 @@ spring:
           - RewriteLocationResponseHeader=AS_IN_REQUEST, Location, ,
   profiles: rewritelocationresponseheader_route
 
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setrequestheader_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetRequestHeader=X-Request-Red, fwcloud
+  profiles: setrequestheader_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setrequestheader_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetResponseHeader=X-Request-Red, fwcloud
+  profiles: setrequestheader_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setstatus_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetStatus= 404 #或者 NOT_FOUND
+  profiles: setstatus_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: request_size_route
+          uri: lb://fw-cloud-upload
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - name: RequestSize
+            args:
+              maxSize: 5000000
+  profiles: request_size_route

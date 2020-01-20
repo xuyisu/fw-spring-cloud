@@ -7,7 +7,6 @@ import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
 
 /**
- *
  * @Author xuyisu
  * @Date 2019/12/6
  */
@@ -21,6 +20,7 @@ public class FwGatewaySimpleApplication {
 
     /**
      * Java 的流式 API 进行路由的定义
+     *
      * @param builder
      * @return
      */
@@ -36,4 +36,8 @@ public class FwGatewaySimpleApplication {
                 )
                 .build();
     }
+
+
+
+
 }

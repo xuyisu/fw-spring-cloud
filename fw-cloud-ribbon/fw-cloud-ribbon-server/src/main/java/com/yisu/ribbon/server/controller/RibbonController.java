@@ -1,6 +1,7 @@
 package com.yisu.ribbon.server.controller;
 
 import cn.hutool.core.util.StrUtil;
+import cn.hutool.extra.servlet.ServletUtil;
 import com.yisu.ribbon.server.entity.User;
 import com.yisu.ribbon.server.service.UserService;
 import lombok.extern.slf4j.Slf4j;
@@ -34,6 +35,7 @@ public class RibbonController {
 //        if(millis>1000){
 //            throw new RuntimeException("error");
 //        }
+        log.info(ServletUtil.getClientIP(req));
         String url = req.getRequestURL().toString();
         User user = userService.getUserById(id);
         user.setRemark(user.getRemark()+":提供服务的是:"+url);
