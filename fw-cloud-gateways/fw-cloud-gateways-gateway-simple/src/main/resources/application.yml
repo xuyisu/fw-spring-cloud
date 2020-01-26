@@ -4,7 +4,10 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: before_route
+    active: after_route
+#  cloud:
+#    gateway:
+#      enabled: false
 eureka:
   client:
     service-url:
@@ -90,11 +93,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: host_route
+        - id: host_path_route
           uri: lb://fw-cloud-ribbon-server
           predicates:
             - Path=/user/{segment},/blue/{segment}
-  profiles: host_route
+  profiles: host_path_route
 
 ---
 spring:
@@ -124,7 +127,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: weight_high
+        - id: weight_heigh
           uri: lb://fw-cloud-ribbon-server
           predicates:
             - Weight=group1, 8
@@ -146,7 +149,7 @@ spring:
           predicates: 
             - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
           filters: #前缀
-            - PrefixPath= /gateway
+            - PrefixPath= /user
   profiles: prefixpath_route
 
 
@@ -159,7 +162,7 @@ spring:
         - id: rewritepath_route
           uri: lb://fw-cloud-ribbon-server
           predicates:
-            - Path=/gateway/**
+            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
           filters:
             - RewritePath=/gateway/(?<segment>.*), /$\{segment}
   profiles: rewritepath_route
@@ -240,18 +243,7 @@ spring:
             - AddResponseHeader=sys, fwcloud
   profiles: add_response_header_route
 
----
-spring:
-  cloud:
-    gateway:
-      routes:
-        - id: dedupe_response_header_route
-          uri: lb://fw-cloud-ribbon-server
-          predicates:
-            - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
-          filters:
-            - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
-  profiles: dedupe_response_header_route
+
 
 ---
 spring:
@@ -265,3 +257,156 @@ spring:
           filters:
           - PreserveHostHeader
   profiles: preserve_host_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: dedupe_response_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin,RETAIN_FIRST
+  profiles: dedupe_response_header_route
+#  当下游和 Spring Cloud Gateway 都设置跨域时，将在 Response Header 中移除重复的 Access-Control-Allow-Credentials 和 Access-Control-Allow-Origin。
+#
+#  strategy 可设置的值以及配置方式如下：
+#
+#  RETAIN_FIRST：保留第一个值【默认】
+#  RETAIN_LAST：保留最后一个值
+#  RETAIN_UNIQUE：保留所有唯一值，以它们第一次出现的顺序保留
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: map_request_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - MapRequestHeader=Blue, X-Request-Red
+  profiles: map_request_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: redirect_to_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - RedirectTo=302, http://www.163.com
+  profiles: redirect_to_route
+
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: remove_request_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - RemoveRequestHeader=Blue
+  profiles: remove_request_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: remove_response_header_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - RemoveResponseHeader=Content-Type
+  profiles: remove_response_header_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: remove_response_parameter_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - RemoveRequestParameter=ids
+  profiles: remove_response_parameter_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: rewritelocationresponseheader_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - RewriteLocationResponseHeader=AS_IN_REQUEST, Location, ,
+  profiles: rewritelocationresponseheader_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setrequestheader_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetRequestHeader=X-Request-Red, fwcloud
+  profiles: setrequestheader_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setrequestheader_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetResponseHeader=X-Request-Red, fwcloud
+  profiles: setrequestheader_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: setstatus_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - SetStatus= 404 #或者 NOT_FOUND
+  profiles: setstatus_route
+
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: request_size_route
+          uri: lb://fw-cloud-upload
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+          filters:
+          - name: RequestSize
+            args:
+              maxSize: 5000000
+  profiles: request_size_route

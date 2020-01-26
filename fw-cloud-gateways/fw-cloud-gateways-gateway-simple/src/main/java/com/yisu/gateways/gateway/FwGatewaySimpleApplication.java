@@ -5,9 +5,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.gateway.route.RouteLocator;
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder;
+import org.springframework.context.annotation.Bean;
 
 /**
- *
  * @Author xuyisu
  * @Date 2019/12/6
  */
@@ -21,6 +21,7 @@ public class FwGatewaySimpleApplication {
 
     /**
      * Java 的流式 API 进行路由的定义
+     *
      * @param builder
      * @return
      */
@@ -36,4 +37,8 @@ public class FwGatewaySimpleApplication {
                 )
                 .build();
     }
+
+
+
+
 }

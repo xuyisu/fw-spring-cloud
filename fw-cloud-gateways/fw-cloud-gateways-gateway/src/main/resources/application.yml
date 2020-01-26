@@ -11,7 +11,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 ---
-#熔断配置
 spring:
   cloud:
     gateway:
@@ -34,7 +33,6 @@ hystrix:
           thread:
             timeoutInMilliseconds: 3000
 ---
-#熔断配置
 spring:
   cloud:
     gateway:
@@ -55,7 +53,6 @@ spring:
     port: 6379
   profiles: rate_limiter_route
 ---
-#熔断配置
 spring:
   cloud:
     gateway:
