@@ -4,7 +4,7 @@ spring:
   application:
     name: fw-gateways-gateway
   profiles:
-    active: hystrix_route
+    active: exception_route
 
 eureka:
   client:
@@ -76,3 +76,13 @@ spring:
                 - java.io.IOException
                 - java.util.concurrent.TimeoutException
   profiles: retry_route
+---
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: exception_route
+          uri: lb://fw-cloud-ribbon-server
+          predicates:
+          - After=2020-01-08T18:30:11.965+08:00[Asia/Shanghai]
+  profiles: exception_route
