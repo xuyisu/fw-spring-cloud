@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>SpringBoot-international</title>
+</head>
+<body>
+<div>
+    <form th:align="center">
+        <label  th:text="#{login.userId}">Username</label>
+        <input type="text"  th:placeholder="#{login.noUserId}" required="" autofocus="">
+        <br>
+        <label th:text="#{login.password}">Password</label>
+        <input type="password"  th:placeholder="#{login.noPassword}" required="">
+        <br>
+        <button  type="submit" th:text="#{login.login}">Sign in</button>
+    </form>
+</div>
+</body>
+</html>

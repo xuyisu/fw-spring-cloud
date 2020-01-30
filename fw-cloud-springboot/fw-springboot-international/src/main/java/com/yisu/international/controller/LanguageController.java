@@ -55,4 +55,5 @@ public class LanguageController {
         String welcome = messageUtil.getMessage(key);
         return FwResult.ok(welcome);
     }
+
 }

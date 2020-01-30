@@ -9,3 +9,9 @@ spring:
     always-use-message-format: false #是否总是应用MessageFormat规则，甚至解析没有参数的消息，默认true
     fallback-to-system-locale: true # 如果没有找到特定地区的文件，是否返回到系统区域，默认false
     use-code-as-default-message: false # 是否使用消息代码作为默认消息，而不是抛出“NoSuchMessageException”，建议仅在开发过程中。，默认false
+  thymeleaf:
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
