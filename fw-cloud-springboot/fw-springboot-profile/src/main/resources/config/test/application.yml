@@ -1,0 +1,7 @@
+server:
+  port: 8773
+spring:
+  application:
+    name: fw-profile
+version: test
+
