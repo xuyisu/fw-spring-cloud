@@ -23,7 +23,7 @@ public class FwHystrixCommond extends HystrixCommand<String> {
         return this.name+":"+Thread.currentThread().getName();
     }
 
-//    public static void main(String[] args) {
+//    public static.assert void main(String[] args) {
 //        String test = new FwHystrixCommond("test").execute();
 //        System.out.println(test);
 //    }
