@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: fw-gateways-zuul-extend
+  redis:
+      host: ${redis.host}
+      password: ${redis.pwd}
+      port: 6379
 eureka:
   client:
     service-url:
