@@ -9,14 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fw-cloud-gateways</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>fw-cloud-gateways-zuul</module>
-        <module>fw-cloud-gateways-gateway-simple</module>
-        <module>fw-cloud-gateways-zuul-simple</module>
-        <module>fw-cloud-gateways-gateway</module>
-        <module>fw-cloud-gateways-zuul-extend</module>
-    </modules>
+    <artifactId>fw-cloud-jwt</artifactId>
+
 
 </project>

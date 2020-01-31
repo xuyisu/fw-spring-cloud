@@ -24,6 +24,7 @@
         <module>fw-cloud-hystrix</module>
         <module>fw-cloud-common</module>
         <module>fw-cloud-admin</module>
+        <module>fw-cloud-jwt</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -39,6 +40,7 @@
         <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
         <mysql.version>5.1.47</mysql.version>
         <hutool.version>5.0.6</hutool.version>
+        <guava.version>22.0</guava.version>
     </properties>
 
     <dependencyManagement>
