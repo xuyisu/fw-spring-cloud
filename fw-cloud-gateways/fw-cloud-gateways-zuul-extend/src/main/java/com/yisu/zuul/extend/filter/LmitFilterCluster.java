@@ -12,6 +12,11 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * @description  基于redis 集群限流
+ * @author xuyisu
+ * @date 2020/1/31
+ */
 @Slf4j
 public class LmitFilterCluster extends ZuulFilter {
 
@@ -55,7 +60,6 @@ public class LmitFilterCluster extends ZuulFilter {
                 redisTemplate.opsForValue().set(key,LIMIT_INIT_VALUE,LIMIT_CACHE_TIME,TimeUnit.SECONDS);
             }
             Long increment = redisTemplate.opsForValue().increment(key, 1);
-            log.info(increment.toString());
             if(increment>=LIMIT_RATE_CLUSTER){
                 ctx.setSendZuulResponse(false);
                 //失败之后通知后续不应该执行了

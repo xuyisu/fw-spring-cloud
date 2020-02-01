@@ -12,7 +12,6 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka/
 zuul:
-#  prefix: /api  前缀，根据需要添加
   routes:
     fw-cloud-ribbon-server:
       path: /ribbon/**
