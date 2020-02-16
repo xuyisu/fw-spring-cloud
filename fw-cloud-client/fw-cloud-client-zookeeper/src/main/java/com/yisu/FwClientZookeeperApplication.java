@@ -1,4 +1,4 @@
-package com.yisu.register.zookeeper;
+package com.yisu;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,14 +6,14 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  *
- * @Author xuyisu
- * @Date 2019/12/6
+ * @author xuyisu
+ * @date 2019/12/6
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class FwRegisterZookeeperApplication {
+public class FwClientZookeeperApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwRegisterZookeeperApplication.class, args);
+        SpringApplication.run(FwClientZookeeperApplication.class, args);
     }
 
 

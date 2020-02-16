@@ -1,6 +1,6 @@
 package com.yisu.client.consul.controller;
 
-import com.yisu.feign.api.HelloApi;
+import com.yisu.feign.api.ConsulApi;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 
     @Autowired
-    private HelloApi helloApi;
+    private ConsulApi helloApi;
 
     @GetMapping("/test")
     public String test() {

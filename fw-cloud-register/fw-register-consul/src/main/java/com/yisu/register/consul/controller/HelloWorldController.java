@@ -1,6 +1,6 @@
 package com.yisu.register.consul.controller;
 
-import com.yisu.feign.api.HelloApi;
+import com.yisu.feign.api.ConsulApi;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class HelloWorldController implements HelloApi {
+public class HelloWorldController implements ConsulApi {
 
     /**
      * 测试接口，实际生产可删除
