@@ -1,6 +1,6 @@
 package com.yisu.register.consul.controller;
 
-import com.yisu.feign.api.ConsulApi;
+import com.yisu.feign.entity.User;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,14 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class HelloWorldController implements ConsulApi {
-
+public class HelloWorldController{
     /**
-     * 测试接口，实际生产可删除
+     * 获取字符串信息
      * @return
      */
     @GetMapping("/helloWorld")
-    public String helloWorld() {
+    public String HelloWorld() {
         return "Hello World!";
+    }
+
+    /**
+     * 获取用户信息
+     * @return
+     */
+    @GetMapping("/user")
+    public User getUser() {
+        return new User(1L,"consul","test","test@qq.com","演示Consul 替换Eureka");
     }
 }

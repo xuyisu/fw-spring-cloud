@@ -18,7 +18,6 @@ public interface ZookeeperApi {
      * @return
      */
     @GetMapping("/helloWorld")
-    @ResponseBody
     String helloWorld();
 
     /**
@@ -26,7 +25,6 @@ public interface ZookeeperApi {
      * @return
      */
     @GetMapping("/user")
-    @ResponseBody
     User getUser();
 
 }

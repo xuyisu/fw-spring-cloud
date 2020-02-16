@@ -1,6 +1,7 @@
 package com.yisu.client.consul.controller;
 
-import com.yisu.feign.api.ConsulApi;
+import com.yisu.client.consul.feign.ConsulApi;
+import com.yisu.feign.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,8 +18,20 @@ public class TestController {
     @Autowired
     private ConsulApi helloApi;
 
-    @GetMapping("/test")
-    public String test() {
+    /**
+     * 获取字符串信息
+     * @return
+     */
+    @GetMapping("/hello")
+    public String hello() {
         return helloApi.helloWorld();
+    }
+    /**
+     * 获取用户信息
+     * @return
+     */
+    @GetMapping("/user")
+    public User user() {
+        return helloApi.getUser();
     }
 }

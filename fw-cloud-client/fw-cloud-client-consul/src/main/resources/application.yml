@@ -11,3 +11,5 @@ spring:
         instance-id: ${spring.application.name}:${spring.cloud.client.ip-address}:${server.port}  #实例ID
         health-check-path: /actuator/health                                                      #健康检查
         health-check-interval: 10s
+  main:
+    allow-bean-definition-overriding: true
