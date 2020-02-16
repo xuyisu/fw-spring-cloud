@@ -2,7 +2,6 @@ package com.yisu.client.zookeeper.feign;
 
 import com.yisu.feign.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -11,7 +10,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @description
  * @date 2019/12/9
  */
-@Configuration
 @FeignClient(name = "fw-register-zookeeper")
 public interface ZookeeperApi {
 

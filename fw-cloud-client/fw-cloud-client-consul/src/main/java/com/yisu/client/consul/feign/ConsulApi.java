@@ -1,4 +1,4 @@
-package com.yisu.feign.api;
+package com.yisu.client.consul.feign;//package com.yisu.feign.api;
 
 import com.yisu.feign.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
