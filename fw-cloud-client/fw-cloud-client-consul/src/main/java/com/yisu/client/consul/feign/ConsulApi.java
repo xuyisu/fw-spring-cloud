@@ -3,7 +3,6 @@ package com.yisu.client.consul.feign;//package com.yisu.feign.api;
 import com.yisu.feign.entity.User;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @author xuyisu
