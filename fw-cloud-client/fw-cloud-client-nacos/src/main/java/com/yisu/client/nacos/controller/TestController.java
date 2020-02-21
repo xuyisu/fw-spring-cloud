@@ -1,5 +1,7 @@
 package com.yisu.client.nacos.controller;
 
+import com.yisu.client.nacos.feign.NacosApi;
+import com.yisu.feign.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
@@ -13,16 +15,22 @@ import org.springframework.web.client.RestTemplate;
 public class TestController {
 
     @Autowired
-    RestTemplate restTemplate;
+    private NacosApi nacosApi;
 
-
-    @GetMapping("/test")
-    public String echo() {
-        return restTemplate.getForObject("http://fw-cloud-nacos-register/get", String.class);
+    /**
+     * 获取字符串信息
+     * @return
+     */
+    @GetMapping("/hello")
+    public String hello() {
+        return nacosApi.helloWorld();
     }
-
-    @RequestMapping(value = "/echo/{str}", method = RequestMethod.GET)
-    public String echo(@PathVariable String str) {
-        return restTemplate.getForObject("http://fw-cloud-nacos-register/echo/" + str, String.class);
+    /**
+     * 获取用户信息
+     * @return
+     */
+    @GetMapping("/user")
+    public User user() {
+        return nacosApi.getUser();
     }
 }

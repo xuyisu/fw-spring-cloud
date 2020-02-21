@@ -1,11 +1,9 @@
 package com.yisu.register.nacos;
 
+import com.yisu.feign.entity.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author xuyisu
@@ -13,18 +11,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019/12/26
  */
 @RestController
-@RefreshScope
 public class TestController {
-    @Value("${useLocal:1}")
-    private String useLocalCache;
-
-    @RequestMapping("/get")
-    public String get() {
-        return useLocalCache;
+    /**
+     * 获取字符串信息
+     * @return
+     */
+    @GetMapping("/helloWorld")
+    public String HelloWorld() {
+        return "Hello World!";
     }
 
-    @RequestMapping(value = "/echo/{string}", method = RequestMethod.GET)
-    public String echo(@PathVariable String string) {
-        return "Hello Nacos Discovery " + string;
+    /**
+     * 获取用户信息
+     * @return
+     */
+    @GetMapping("/user")
+    public User getUser() {
+        return new User(1L,"nacos","test","test@qq.com","演示Nacos 替换Eureka");
     }
 }
