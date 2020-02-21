@@ -30,14 +30,14 @@
 | 进阶    |   总线|   OK  |
 | 进阶    |   Gateway|   OK  |
 | 进阶    |   服务跟踪（SkyWalking、Zipkin、Admin）|   进行中  |
-| 进阶    |   日志跟踪（ELK）|   进行中  |
-| 进阶    |   注册中心拓展（Zookeeper、Consul、Nacos）|   进行中 |
-| 进阶    |  网关拓展（Spring Cloud Gateway、服务现流）|   进行中  |
+| 进阶    |   日志跟踪（ELK）|   OK  |
+| 进阶    |   注册中心拓展（Zookeeper、Consul、Nacos）|   OK |
+| 进阶    |  网关拓展（Spring Cloud Gateway、服务现流）|   OK  |
 | 进阶    |   配置中心拓展（Nacos、Apollo）|  进行中|
-| 进阶    |   服务限流|  进行中|
+| 进阶    |   服务限流|  OK |
 | 实战    |   项目实战|  进行中  |
 | 实战    | 分布式事务处理  |  进行中  |
-| 容器化   |   docker |   进行中  |
+| 容器化   |   docker |   OK  |
 | 容器化   |   k8s|   进行中  |
  
  #### 官方教程
