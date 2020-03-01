@@ -17,7 +17,7 @@
 |  SpringCloud Alibaba   | 2.1.1.RELEASE   |
 |  Hutool   | 5.0.6   |
  
- ### 涉及知识点
+### 涉及知识点
 |   阶段  |  知识点   | 状态   |
 | --- | --- |--- |
 | 入门    |   SpringBoot  |   OK  |
@@ -28,50 +28,48 @@
 | 入门    |   Zuul|   OK  |
 | 入门    |   Config|   OK  |
 | 进阶    |   总线|   OK  |
-| 进阶    |   Gateway|   OK  |
-| 进阶    |   服务跟踪（SkyWalking、Zipkin、Admin）|   进行中  |
-| 进阶    |   日志跟踪（ELK）|   OK  |
-| 进阶    |   注册中心拓展（Zookeeper、Consul、Nacos）|   OK |
-| 进阶    |  网关拓展（Spring Cloud Gateway、服务现流）|   OK  |
-| 进阶    |   配置中心拓展（Nacos、Apollo）|  进行中|
-| 进阶    |   服务限流|  OK |
-| 实战    |   项目实战|  进行中  |
-| 实战    | 分布式事务处理  |  进行中  |
+| 进阶    |   Gateway|   OK |
+| 进阶    |   服务跟踪（SkyWalking）|   进行中  |
+| 进阶    |   服务跟踪（Zipkin）|   进行中  |
+| 进阶    |   注册中心拓展（Zookeeper）|   OK |
+| 进阶    |   注册中心拓展（Nacos）|   OK |
+| 进阶    |   注册中心拓展（Consul）|  OK |
+| 进阶    |  网关拓展（Zuul 服务现流）|   OK  |
+| 进阶    |  网关拓展（Spring Cloud Gateway）|   OK  |
+| 进阶    |   配置中心拓展（Nacos）|  进行中|
+| 进阶    |   配置中心拓展（Apollo）|  进行中|
+| 高级    |   应用监控（SpringBoot Admin）|   OK  |
+| 高级    |   应用监控（ELK）|   OK  |
+| 高级    |   应用监控（Prometheus ）|  OK  |
+| 高级    |   缓存 |   进行中  |
+| 高级    | 分库分表  |  进行中  |
+| 高级    | 分布式事务处理  |  进行中  |
+| 安全认证 |   Spring Security |   进行中  |
 | 容器化   |   docker |   OK  |
 | 容器化   |   k8s|   进行中  |
+
  
- #### 官方教程
+### 官方教程
  >很多代码之前是有交互和修改的，具体请参考教程使用，当然如果你已经精通Spring Cloud ，阅读这些案例也会帮你回顾和加深印象。
  [教程地址](https://www.kancloud.cn/xuyisu/springcloud_springboot)
 
- ##### 微信小程序扫描可以直接阅读
-  *****
- ![](images/小程序.png)
+#### 微信小程序扫描可以直接阅读
+*****
+![](images/小程序.png)
  
  
 
  
-#### 模块说明
-```lua
-fw-spring-cloud  -- https://github.com/xuyisu/fw-sping-cloud.git
+### 部分内容截图
+#### admin 监控
+![](images/admin.png)
+#### elk 日志
+![](images/elk.png)
+#### Prometheus  监控
+![](images/docker jk.png)
+![](images/mysql jk.png)
+![](images/redis jk.png)
 
-fw-spring-cloud
-└── fw-cloud-client -- 应用健康 
-└── fw-cloud-client -- 客户端 
-└── fw-cloud-config-center -- 配置中心 
-└── fw-cloud-feign -- elk例子 
-└── fw-cloud-feign -- REST请求 
-└── fw-cloud-gateways -- 网关
-└── fw-cloud-hystrix- 断路器
-└── fw-cloud-mq -- RabbitMQ、Kafka 例子
-└── fw-cloud-register -- 注册中心
-└── fw-cloud-ribbon -- 负载均衡
-└── fw-cloud-springboot -- springboot
-└── fw-cloud-stream -- stream
-└── fw-cloud-tracking -- 链路跟踪
-└── fw-cloud-upload -- 文件上传
- 	 
-```
 
 
 
