@@ -57,25 +57,17 @@
 *****
 ![](images/小程序.png)
  
- 
-
- 
 ### 部分内容截图
 #### admin 监控
 ![](images/admin.png)
 #### elk 日志
 ![](images/elk.png)
 #### Prometheus  监控
-![](images/docker jk.png)
-*****
-![](images/mysql jk.png)
-*****
-![](images/redis jk.png)
+![](images/dockerjk.png)
+![](images/mysqljk.png)
+![](images/redisjk.png)
 
-
-
-
-### 交流群（QQ群779183850）
+### 交流群(QQ群779183850)
 >里面上传了很多架构、技术文档、共同进步
 
 ![](images/security技术交流群二维码.png)
