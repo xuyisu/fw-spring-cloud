@@ -46,7 +46,7 @@
 
     <!--输出到 logstash的 appender-->
     <appender name="logstash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
-        <destination>${logstash.ip}:4560</destination>
+        <destination>localhost:4560</destination>
         <encoder charset="UTF-8" class="net.logstash.logback.encoder.LogstashEncoder"/>
     </appender>
 
