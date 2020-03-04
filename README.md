@@ -29,8 +29,8 @@
 | 入门    |   Config|   OK  |
 | 进阶    |   总线|   OK  |
 | 进阶    |   Gateway|   OK |
-| 进阶    |   服务跟踪（SkyWalking）|   进行中  |
-| 进阶    |   服务跟踪（Zipkin）|   进行中  |
+| 进阶    |   服务跟踪（SkyWalking）|   OK  |
+| 进阶    |   服务跟踪（Zipkin）|   OK  |
 | 进阶    |   注册中心拓展（Zookeeper）|   OK |
 | 进阶    |   注册中心拓展（Nacos）|   OK |
 | 进阶    |   注册中心拓展（Consul）|  OK |
