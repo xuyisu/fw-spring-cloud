@@ -53,9 +53,6 @@
  >很多代码之前是有交互和修改的，具体请参考教程使用，当然如果你已经精通Spring Cloud ，阅读这些案例也会帮你回顾和加深印象。
  [教程地址](https://www.kancloud.cn/xuyisu/springcloud_springboot)
 
-#### 微信小程序扫描可以直接阅读
-*****
-![](images/小程序.png)
  
 ### 部分内容截图
 #### admin 监控
