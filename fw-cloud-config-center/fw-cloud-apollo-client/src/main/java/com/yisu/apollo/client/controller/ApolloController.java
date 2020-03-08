@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/config")
 public class ApolloController {
-    @Value("${fwcloud.config.name}")
-    private boolean configName;
+    @Value("${fwcloud.config.name:test}")
+    private String configName;
 
     @RequestMapping("/get")
-    public boolean get() {
+    public String get() {
         return configName;
     }
 }

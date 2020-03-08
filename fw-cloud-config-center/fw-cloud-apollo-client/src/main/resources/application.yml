@@ -1,5 +1,5 @@
 apollo:
-  meta: http://10.7.46.113:8080
+  meta: http://${meta_ip}:8080
   bootstrap:
     enabled: true
     namespaces: application
