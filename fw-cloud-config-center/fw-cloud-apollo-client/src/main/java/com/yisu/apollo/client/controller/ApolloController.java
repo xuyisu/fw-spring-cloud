@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/config")
 public class ApolloController {
+
     @Value("${fwcloud.config.name:test}")
     private String configName;
 

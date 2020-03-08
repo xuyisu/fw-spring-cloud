@@ -13,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @EnableApolloConfig
 public class FwApolloClientApplication {
     public static void main(String[] args) {
+
         SpringApplication.run(FwApolloClientApplication.class, args);
     }
 }
