@@ -37,7 +37,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
-        <spring-cloud-alibaba.version>2.1.1.RELEASE</spring-cloud-alibaba.version>
+        <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <mysql.version>5.1.47</mysql.version>
         <hutool.version>5.0.6</hutool.version>
         <guava.version>22.0</guava.version>

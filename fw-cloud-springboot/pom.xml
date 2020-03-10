@@ -18,5 +18,6 @@
         <module>fw-springboot-international</module>
         <module>fw-springboot-lock</module>
         <module>fw-springboot-cache</module>
+        <module>fw-springboot-sentinel</module>
     </modules>
 </project>

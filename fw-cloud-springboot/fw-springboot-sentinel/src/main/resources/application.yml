@@ -1,0 +1,11 @@
+server:
+  #服务端口号
+  port: 8900
+spring:
+  application:
+    name: fw-sentinel
+  cloud:
+    sentinel:
+      transport:
+        #sentinel控制台地址
+        dashboard: 127.0.0.1:8080
