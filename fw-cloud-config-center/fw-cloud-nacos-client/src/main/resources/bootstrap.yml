@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: fw-cloud-nacos
   cloud:
     nacos:
       config:
