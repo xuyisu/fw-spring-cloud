@@ -25,6 +25,7 @@
         <module>fw-cloud-common</module>
         <module>fw-cloud-admin</module>
         <module>fw-cloud-jwt</module>
+        <module>fw-cloud-docker</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
