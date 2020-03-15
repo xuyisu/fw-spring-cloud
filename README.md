@@ -36,8 +36,8 @@
 | 进阶    |   注册中心拓展（Consul）|  OK |
 | 进阶    |  网关拓展（Zuul 服务现流）|   OK  |
 | 进阶    |  网关拓展（Spring Cloud Gateway）|   OK  |
-| 进阶    |   配置中心拓展（Nacos）|  进行中|
-| 进阶    |   配置中心拓展（Apollo）|  进行中|
+| 进阶    |   配置中心拓展（Nacos）|  OK |
+| 进阶    |   配置中心拓展（Apollo）|  OK |
 | 高级    |   应用监控（SpringBoot Admin）|   OK  |
 | 高级    |   应用监控（ELK）|   OK  |
 | 高级    |   应用监控（Prometheus ）|  OK  |
