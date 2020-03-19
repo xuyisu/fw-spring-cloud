@@ -2,6 +2,6 @@ server:
   port: 8801
 spring:
   redis:
-    host: ${redisip}
+    host: localhost
     port: 6379
-    password: ${pwd}
+    password:

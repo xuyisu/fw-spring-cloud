@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author xuyisu
- * @description guava demo接口演示
+ * @description redis demo接口演示
  * @date 2020/01/18
  */
 @RestController
 @RequestMapping("user")
 @Slf4j
-public class GuavaController {
+public class RedisController {
 
     @Autowired
     private UserService userService;
