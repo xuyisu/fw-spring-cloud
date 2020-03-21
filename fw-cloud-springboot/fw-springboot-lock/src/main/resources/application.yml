@@ -2,8 +2,8 @@ server:
   port: 8773
 # redisson lock
 redisson:
-  address:  redis://****:6379
-  password: ****
+  address:  redis://localhost:6379
+  password: 123456
 #redisson:
 #  address:  redis://${redisip}:6379
 #  password: ${redispwd}
