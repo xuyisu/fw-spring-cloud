@@ -41,7 +41,8 @@
 | 高级    |   应用监控（SpringBoot Admin）|   OK  |
 | 高级    |   应用监控（ELK）|   OK  |
 | 高级    |   应用监控（Prometheus ）|  OK  |
-| 高级    |   缓存 |   进行中  |
+| 高级    |   缓存(Guava、Redis) |   OK  |
+| 高级    |   分布式锁(Mysql、Redis、Zookeeper) |   OK  |
 | 高级    | 分库分表  |  进行中  |
 | 高级    | 分布式事务处理  |  进行中  |
 | 安全认证 |   Spring Security |   进行中  |
