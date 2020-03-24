@@ -26,6 +26,7 @@
         <module>fw-cloud-admin</module>
         <module>fw-cloud-jwt</module>
         <module>fw-cloud-docker</module>
+        <module>fw-cloud-base-dao</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -42,6 +43,8 @@
         <mysql.version>5.1.47</mysql.version>
         <hutool.version>5.0.6</hutool.version>
         <guava.version>22.0</guava.version>
+        <HikariCP.version>2.7.9</HikariCP.version>
+        <mybatis.plus.version>3.2.0</mybatis.plus.version>
     </properties>
 
     <dependencyManagement>
