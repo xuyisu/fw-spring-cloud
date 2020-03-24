@@ -59,8 +59,15 @@ public class FwResult<T> implements Serializable {
         return restResult(null, FAIL, msg, null);
     }
 
+    public static <T> FwResult<T> failedCodeMsg(int code,String msg) {
+        return restResult(null, code, msg, null);
+    }
+
     public static <T> FwResult<T> failed(T data) {
         return restResult(data, FAIL, MSG_FAIL, null);
+    }
+    public static <T> FwResult<T> failedCodeData(int code,T data) {
+        return restResult(data, code, MSG_FAIL, null);
     }
 
     public static <T> FwResult<T> failed(T data, String msg) {

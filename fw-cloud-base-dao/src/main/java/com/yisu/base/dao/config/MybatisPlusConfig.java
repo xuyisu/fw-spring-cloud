@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @date '2020-03-22'
  */
 @Configuration
-@MapperScan(value = "com.yisu.base.dao.config.mapper")
+@MapperScan(value = "com.yisu.base.dao.mapper")
 public class MybatisPlusConfig {
     /**
      * 分页插件
