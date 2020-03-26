@@ -46,6 +46,7 @@
         <guava.version>22.0</guava.version>
         <HikariCP.version>2.7.9</HikariCP.version>
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
+        <rocketmq.version>2.0.4</rocketmq.version>
     </properties>
 
     <dependencyManagement>

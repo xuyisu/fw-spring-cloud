@@ -1,5 +1,5 @@
 server:
-  port: 9001
+  port: 9002
 spring:
   #数据库配置  start
   datasource:
@@ -17,5 +17,3 @@ spring:
       idle-timeout: 300000
 rocketmq:
   name-server: localhost:9876
-  producer:
-    group: order-group

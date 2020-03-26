@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>fw-cloud-transaction-rocketmq</module>
+        <module>fw-cloud-transaction-base-dao</module>
     </modules>
 
 

@@ -12,10 +12,11 @@
     <artifactId>fw-cloud-transaction-rocketmq-order</artifactId>
 
     <dependencies>
+        <!-- base-dao -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
+            <groupId>com.yisu.cloud</groupId>
+            <artifactId>fw-cloud-transaction-base-dao</artifactId>
+            <version>${version}</version>
         </dependency>
     </dependencies>
 
