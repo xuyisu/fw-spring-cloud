@@ -1,7 +1,7 @@
-package com.yisu.transaction.rocketmq.pay.listener;
+package com.yisu.transaction.rocketmq.send.listener;
 
 import com.yisu.transacation.base.dao.model.FwTradeLog;
-import com.yisu.transaction.rocketmq.pay.service.PayService;
+import com.yisu.transaction.rocketmq.send.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;

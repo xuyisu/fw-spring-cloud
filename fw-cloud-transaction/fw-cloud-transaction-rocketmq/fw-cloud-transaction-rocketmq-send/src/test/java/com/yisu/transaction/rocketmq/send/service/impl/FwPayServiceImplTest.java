@@ -1,4 +1,4 @@
-package com.yisu.transaction.rocketmq.pay.service.impl;
+package com.yisu.transaction.rocketmq.send.service.impl;
 
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;

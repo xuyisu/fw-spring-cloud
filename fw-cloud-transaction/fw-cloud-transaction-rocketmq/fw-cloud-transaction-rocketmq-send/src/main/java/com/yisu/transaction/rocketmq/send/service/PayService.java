@@ -1,4 +1,4 @@
-package com.yisu.transaction.rocketmq.pay.service;
+package com.yisu.transaction.rocketmq.send.service;
 
 import com.yisu.transacation.base.dao.model.FwTradeLog;
 
