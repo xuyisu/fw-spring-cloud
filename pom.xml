@@ -47,6 +47,7 @@
         <HikariCP.version>2.7.9</HikariCP.version>
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <rocketmq.version>2.0.4</rocketmq.version>
+        <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
     </properties>
 
     <dependencyManagement>
@@ -72,6 +73,27 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+
+
+            <!-- lcn 依赖包 -->
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tc</artifactId>
+                <version>${codingapi.txlcn.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-tm</artifactId>
+                <version>${codingapi.txlcn.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.codingapi.txlcn</groupId>
+                <artifactId>txlcn-txmsg-netty</artifactId>
+                <version>${codingapi.txlcn.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <dependencies>
