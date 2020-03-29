@@ -21,7 +21,7 @@ spring:
     port: 6379
     host: ${redisIp}
     database: 0
-    password: 940822
+    password: 123456
 eureka:
   client:
     service-url:
