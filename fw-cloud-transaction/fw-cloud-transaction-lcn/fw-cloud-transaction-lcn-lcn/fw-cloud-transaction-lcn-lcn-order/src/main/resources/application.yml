@@ -1,0 +1,38 @@
+server:
+  port: 9002
+spring:
+  application:
+    name: fw-transaction-lcn-order
+  #数据库配置  start
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://${dbIp}:3306/fw_transaction?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      auto-commit: true
+      max-lifetime: 1200000
+      minimum-idle: 5
+      maximum-pool-size: 12
+      idle-timeout: 300000
+  redis:
+    port: 6379
+    host: ${redisIp}
+    database: 0
+    password: 123456
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+tx-lcn:
+  client:
+    manager-address: 127.0.0.1:8888
+  logger:
+    enabled: true
+feign:
+  hystrix:
+    enabled: true
+hystrix:
+  shareSecurityContext: true

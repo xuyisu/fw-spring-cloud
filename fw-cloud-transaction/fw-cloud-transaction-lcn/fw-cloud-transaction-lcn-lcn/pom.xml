@@ -16,5 +16,28 @@
         <module>fw-cloud-transaction-lcn-lcn-send</module>
     </modules>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- base-dao -->
+        <dependency>
+            <groupId>com.yisu.cloud</groupId>
+            <artifactId>fw-cloud-transaction-base-dao</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <!--服务发现-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>
