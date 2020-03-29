@@ -1,4 +1,4 @@
-package com;
+package com.yisu;
 
 import com.codingapi.txlcn.tc.config.EnableDistributedTransaction;
 import org.springframework.boot.SpringApplication;
@@ -13,9 +13,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 @EnableDistributedTransaction
 @SpringBootApplication
 @EnableDiscoveryClient
-public class FwTransactionLcnSendApplication {
+public class FwTransactionLcnTccSendApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwTransactionLcnSendApplication.class, args);
+        SpringApplication.run(FwTransactionLcnTccSendApplication.class, args);
     }
 
 

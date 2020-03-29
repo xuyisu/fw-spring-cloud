@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>fw-cloud-transaction-lcn</artifactId>
+        <groupId>com.yisu.cloud</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>fw-cloud-transaction-lcn-tcc</artifactId>
+
+    <modules>
+        <module>fw-cloud-transaction-lcn-tcc-order</module>
+        <module>fw-cloud-transaction-lcn-tcc-send</module>
+    </modules>
+
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- base-dao -->
+        <dependency>
+            <groupId>com.yisu.cloud</groupId>
+            <artifactId>fw-cloud-transaction-base-dao</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <!-- TC依赖 -->
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-tc</artifactId>
+        </dependency>
+        <!-- TC和TM通信依赖于Netty -->
+        <dependency>
+            <groupId>com.codingapi.txlcn</groupId>
+            <artifactId>txlcn-txmsg-netty</artifactId>
+        </dependency>
+        <!--服务发现-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <!--feign-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+    </dependencies>
+
+</project>
