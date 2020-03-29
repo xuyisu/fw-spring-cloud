@@ -17,3 +17,4 @@ target/
 *.java~
 *.properties~
 *.xml~
+/.txlcn/
