@@ -25,8 +25,8 @@ public class SendServiceImpl implements SendService {
     @Override
     public void sendOrder(FwTradeLog fwTradeLog) {
         fwTradeLog.setStatus(StatusEnum.THREE.getValue());
+        fwTradeLog.setStatusDsc(StatusEnum.THREE.getDesc());
         fwTradeLogService.save(fwTradeLog);
         log.info("[订单状态{}]=>{},当前商品id=>{},商品名称=>{}",fwTradeLog.getOrderId(), StatusEnum.THREE.getDesc(),fwTradeLog.getProductId(),fwTradeLog.getProductName());
-
     }
 }

@@ -11,17 +11,17 @@
 
     <artifactId>fw-cloud-transaction-lcn-lcn-order</artifactId>
 
-    <dependencies>
-        <!-- TC依赖 -->
-        <dependency>
-            <groupId>com.codingapi.txlcn</groupId>
-            <artifactId>txlcn-tc</artifactId>
-        </dependency>
-        <!-- TC和TM通信依赖于Netty -->
-        <dependency>
-            <groupId>com.codingapi.txlcn</groupId>
-            <artifactId>txlcn-txmsg-netty</artifactId>
-        </dependency>
-    </dependencies>
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; TC依赖 &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.codingapi.txlcn</groupId>-->
+<!--            <artifactId>txlcn-tc</artifactId>-->
+<!--        </dependency>-->
+<!--        &lt;!&ndash; TC和TM通信依赖于Netty &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.codingapi.txlcn</groupId>-->
+<!--            <artifactId>txlcn-txmsg-netty</artifactId>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
 
 </project>

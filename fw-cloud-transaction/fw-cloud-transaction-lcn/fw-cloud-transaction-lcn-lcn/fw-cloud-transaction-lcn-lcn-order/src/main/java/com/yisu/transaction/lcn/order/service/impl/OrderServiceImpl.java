@@ -4,9 +4,11 @@ import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.yisu.transacation.base.dao.enums.StatusEnum;
 import com.yisu.transacation.base.dao.model.FwTradeLog;
 import com.yisu.transacation.base.dao.service.FwTradeLogService;
+import com.yisu.transaction.lcn.order.feign.RemoteSendServiceFeign;
 import com.yisu.transaction.lcn.order.service.OrderService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 /**
@@ -21,6 +23,8 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private FwTradeLogService fwTradeLogService;
 
+    @Autowired
+    private RemoteSendServiceFeign remoteSendServiceFeign;
 
     @LcnTransaction
     @Override
@@ -32,7 +36,9 @@ public class OrderServiceImpl implements OrderService {
         fwTradeLogService.save(fwTradeLog);
         log.info("[订单状态{}]=>{},当前商品id=>{},商品名称=>{}",fwTradeLog.getOrderId(), StatusEnum.TWO.getDesc(),fwTradeLog.getProductId(),fwTradeLog.getProductName());
 
+        remoteSendServiceFeign.sendOrder(fwTradeLog);
 
+        int i=1/0;
     }
 
 }
