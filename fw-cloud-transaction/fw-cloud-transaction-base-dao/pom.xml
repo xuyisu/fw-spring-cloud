@@ -21,12 +21,6 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
 
-        <!-- 数据连接池-->
-        <dependency>
-            <groupId>com.zaxxer</groupId>
-            <artifactId>HikariCP</artifactId>
-            <version>${HikariCP.version}</version>
-        </dependency>
         <!-- 通用Mapper启动器 -->
         <dependency>
             <groupId>com.baomidou</groupId>

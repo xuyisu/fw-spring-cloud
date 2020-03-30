@@ -41,10 +41,11 @@
         <java.version>1.8</java.version>
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
-        <mysql.version>5.1.47</mysql.version>
+        <mysql.version>5.1.48</mysql.version>
         <hutool.version>5.0.6</hutool.version>
         <guava.version>22.0</guava.version>
         <HikariCP.version>2.7.9</HikariCP.version>
+        <druid.version>1.1.10</druid.version>
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <rocketmq.version>2.0.4</rocketmq.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>

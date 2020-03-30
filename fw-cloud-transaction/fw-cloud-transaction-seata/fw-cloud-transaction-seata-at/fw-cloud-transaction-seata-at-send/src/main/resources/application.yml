@@ -1,0 +1,20 @@
+server:
+  port: 9005
+spring:
+  application:
+    name: fw-transaction-seata-at-send
+  #数据库配置  start
+  datasource:
+    druid:
+      url: jdbc:mysql://${dbIp}:3306/fw_transaction_seata?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        tx-service-group: order-service-group
