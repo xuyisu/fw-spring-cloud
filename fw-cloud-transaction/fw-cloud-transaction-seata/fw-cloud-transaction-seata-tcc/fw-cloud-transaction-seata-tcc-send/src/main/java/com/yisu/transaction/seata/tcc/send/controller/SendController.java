@@ -1,7 +1,7 @@
-package com.yisu.transaction.seata.at.send.controller;
+package com.yisu.transaction.seata.tcc.send.controller;
 
 import com.yisu.transacation.base.dao.model.FwTradeLog;
-import com.yisu.transaction.seata.at.send.service.SendService;
+import com.yisu.transaction.seata.tcc.send.service.SendService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

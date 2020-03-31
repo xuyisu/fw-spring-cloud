@@ -11,9 +11,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  */
 @SpringBootApplication
 @EnableDiscoveryClient
-public class FwTransactionSeataAtSendApplication {
+public class FwTransactionSeataTccSendApplication {
     public static void main(String[] args) {
-        SpringApplication.run(FwTransactionSeataAtSendApplication.class, args);
+        SpringApplication.run(FwTransactionSeataTccSendApplication.class, args);
     }
 
 

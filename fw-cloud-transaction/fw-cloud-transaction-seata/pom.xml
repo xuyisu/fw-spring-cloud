@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>fw-cloud-transaction-seata-at</module>
+        <module>fw-cloud-transaction-seata-tcc</module>
     </modules>
 
 
