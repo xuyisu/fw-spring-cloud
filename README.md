@@ -44,7 +44,9 @@
 | 高级    |   缓存(Guava、Redis) |   OK  |
 | 高级    |   分布式锁(Mysql、Redis、Zookeeper) |   OK  |
 | 高级    | 分库分表(Sharding-JDBC)  |  OK  |
-| 高级    | 分布式事务处理  |  进行中  |
+| 高级    | 分布式事务(MQ)  |  OK  |
+| 高级    | 分布式事务(LCN)  |  OK  |
+| 高级    | 分布式事务(Seata)  |  OK  |
 | 安全认证 |   Spring Security |   进行中  |
 | 容器化   |   docker |   OK  |
 | 容器化   |   k8s|   进行中  |
