@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: spring-boot-mongodb
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/fw_mongo

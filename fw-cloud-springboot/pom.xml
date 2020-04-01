@@ -19,5 +19,6 @@
         <module>fw-springboot-lock</module>
         <module>fw-springboot-cache</module>
         <module>fw-springboot-sentinel</module>
+        <module>fw-springboot-mongodb</module>
     </modules>
 </project>
