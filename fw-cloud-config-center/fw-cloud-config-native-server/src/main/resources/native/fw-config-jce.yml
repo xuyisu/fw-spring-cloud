@@ -1,0 +1,23 @@
+spring:
+  #数据库配置  start
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://${dbIp}:3306/fw_jwt?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+    username: root
+    password: {cipher}238820f7e73cdd33d051fd994cd84c2b333ff385bd0d098b5b48393486726996
+    driver-class-name: com.mysql.jdbc.Driver
+    hikari:
+      connection-timeout: 20000
+      auto-commit: true
+      max-lifetime: 1200000
+      minimum-idle: 5
+      maximum-pool-size: 12
+      idle-timeout: 300000
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+logging:
+  level:
+    com.yisu: debug
+version: eureka-jce-2.0

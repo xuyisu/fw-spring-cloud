@@ -18,6 +18,7 @@
         <module>fw-cloud-config-kafka-client</module>
         <module>fw-cloud-nacos-client</module>
         <module>fw-cloud-apollo-client</module>
+        <module>fw-cloud-config-native-client-jce</module>
     </modules>
 
 
