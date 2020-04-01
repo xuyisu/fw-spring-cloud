@@ -62,8 +62,8 @@ public class SysUserServiceTest {
      */
     @Test
     public void updateTest(){
-        Query query = Query.query(Criteria.where("user_phone").is("55"));
-        Update update = Update.update("email", "53@qq.com").set("pos_code", "XYS11023");
+        Query query = Query.query(Criteria.where("user_phone").is("50"));
+        Update update = Update.update("pos_code", "XYS11023");
 //        Update update = Update.update("user_phone", "55").set("pos_code", "XYS11023");
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, SysUser.class);
         log.info("update 影响行数："+updateResult.getModifiedCount());
@@ -71,13 +71,41 @@ public class SysUserServiceTest {
 
 
     /**
-     * 查询
+     * 查询所有符合条件的数据，返回List
      */
     @Test
     public void findTest(){
         Query query = Query.query(Criteria.where("user_name").is("root"));
         List<SysUser> sysUsers = mongoTemplate.find(query, SysUser.class);
-        System.out.println(sysUsers.size());
+        log.info("find 影响行数："+sysUsers.size());
+        log.info("find 影响数据："+JSONUtil.toJsonStr(sysUsers));
+    }
+
+    /**
+     * 查询符合条件的第一条数据
+     */
+    @Test
+    public void findOneTest(){
+        Query query = Query.query(Criteria.where("user_name").is("root"));
+        SysUser sysUser= mongoTemplate.findOne(query, SysUser.class);
+        log.info("find 影响数据："+JSONUtil.toJsonStr(sysUser));
+    }
+
+    /**
+     * 查询符合条件的第一条数据
+     */
+    @Test
+    public void findByIdTest(){
+        SysUser sysUser= mongoTemplate.findById(1, SysUser.class);;
+        log.info("find 影响数据："+JSONUtil.toJsonStr(sysUser));
+    }
+
+    /**
+     * 查询符合条件的第一条数据
+     */
+    @Test
+    public void findAllTest(){
+        List<SysUser> sysUsers = mongoTemplate.findAll(SysUser.class);
         log.info("find 影响行数："+sysUsers.size());
         log.info("find 影响数据："+JSONUtil.toJsonStr(sysUsers));
     }
