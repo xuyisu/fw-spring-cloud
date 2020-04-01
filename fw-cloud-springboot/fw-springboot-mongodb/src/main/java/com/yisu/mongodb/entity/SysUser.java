@@ -94,4 +94,9 @@ public class SysUser {
      */
     @Field("user_phone")
     private String userPhone;
+    /**
+     * 租户编码
+     */
+    @Field("tenant_code")
+    private String  tenantCode;
 }

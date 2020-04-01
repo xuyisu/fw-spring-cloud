@@ -24,7 +24,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Slf4j
-public class SysUserServiceTest {
+public class SysUserServiceTenantTest {
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -57,15 +57,26 @@ public class SysUserServiceTest {
         DeleteResult remove = mongoTemplate.remove(query, SysUser.class);
         log.info("delete 影响行数："+remove.getDeletedCount());
     }
+
     /**
-     * 更新
+     * 更新多条
      */
     @Test
-    public void updateTest(){
-        Query query = Query.query(Criteria.where("user_phone").is("50"));
-        Update update = Update.update("pos_code", "XYS11023");
-//        Update update = Update.update("user_phone", "55").set("pos_code", "XYS11023");
+    public void updateOneTest(){
+        Query query = Query.query(Criteria.where("tenant_code").is(null));
+        Update update = Update.update("tenant_code", "XYS");
         UpdateResult updateResult = mongoTemplate.updateFirst(query, update, SysUser.class);
+        log.info("update 影响行数："+updateResult.getModifiedCount());
+    }
+
+    /**
+     * 更新多条
+     */
+    @Test
+    public void updateMutTest(){
+        Query query = Query.query(Criteria.where("tenant_code").is(null));
+        Update update = Update.update("tenant_code", "XYS");
+        UpdateResult updateResult = mongoTemplate.updateMulti(query, update, SysUser.class);
         log.info("update 影响行数："+updateResult.getModifiedCount());
     }
 
@@ -74,41 +85,26 @@ public class SysUserServiceTest {
      * 查询所有符合条件的数据，返回List
      */
     @Test
-    public void findTest(){
-        Query query = Query.query(Criteria.where("user_name").is("root"));
+    public void findByTenantCodeTest(){
+        Query query = Query.query(Criteria.where("tenant_code").is(null));
         List<SysUser> sysUsers = mongoTemplate.find(query, SysUser.class);
         log.info("find 影响行数："+sysUsers.size());
         log.info("find 影响数据："+JSONUtil.toJsonStr(sysUsers));
     }
 
-    /**
-     * 查询符合条件的第一条数据
-     */
-    @Test
-    public void findOneTest(){
-        Query query = Query.query(Criteria.where("user_name").is("root"));
-        SysUser sysUser= mongoTemplate.findOne(query, SysUser.class);
-        log.info("find 影响数据："+JSONUtil.toJsonStr(sysUser));
-    }
 
     /**
-     * 查询符合条件的第一条数据
+     * 查询所有符合条件的数据，返回List
      */
     @Test
-    public void findByIdTest(){
-        SysUser sysUser= mongoTemplate.findById(1, SysUser.class);;
-        log.info("find 影响数据："+JSONUtil.toJsonStr(sysUser));
-    }
-
-    /**
-     * 查询符合条件的第一条数据
-     */
-    @Test
-    public void findAllTest(){
-        List<SysUser> sysUsers = mongoTemplate.findAll(SysUser.class);
+    public void findByTenantCode2Test(){
+        Query query = Query.query(Criteria.where("tenant_code").is("FWCLOUD"));
+        List<SysUser> sysUsers = mongoTemplate.find(query, SysUser.class);
         log.info("find 影响行数："+sysUsers.size());
         log.info("find 影响数据："+JSONUtil.toJsonStr(sysUsers));
     }
+
+
 
     /**
      * 构建实体
@@ -130,6 +126,8 @@ public class SysUserServiceTest {
         sysUser.setRealName("fwcloud");
         sysUser.setDeptCode("dept");
         sysUser.setUserPhone(String.valueOf(RandomUtil.randomNumber()));
+        sysUser.setTenantCode("FWCLOUD");
+
         return sysUser;
     }
 }
