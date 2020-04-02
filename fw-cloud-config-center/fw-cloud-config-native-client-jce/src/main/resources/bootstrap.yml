@@ -2,7 +2,7 @@ server:
   port: 8780
 spring:
   application:
-    name: fw-config-jce
+    name: fw-config-jce-rsa
   cloud:
     config: #自己指定的和服务发现的2选1
 #      uri: http://localhost:8778/  自己指定的

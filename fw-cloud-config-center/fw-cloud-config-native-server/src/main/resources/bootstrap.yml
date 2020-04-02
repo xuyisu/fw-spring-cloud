@@ -40,4 +40,11 @@ eureka:
       defaultZone: http://localhost:8761/eureka
 
 encrypt:
-  key: fwcloud
+  # aes
+#  key: fwcloud
+  # rsa
+  key-store:
+    location: classpath:/config-server.keystore
+    password: 123456
+    alias: config-server-key
+    secret: 123456
