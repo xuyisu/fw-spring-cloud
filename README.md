@@ -47,7 +47,6 @@
 | 高级    | 分布式事务(MQ)  |  OK  |
 | 高级    | 分布式事务(LCN)  |  OK  |
 | 高级    | 分布式事务(Seata)  |  OK  |
-| 安全认证 |   Spring Security |   进行中  |
 | 容器化   |   docker |   OK  |
 | 容器化   |   k8s|   进行中  |
 
