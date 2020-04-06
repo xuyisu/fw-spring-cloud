@@ -1,8 +1,8 @@
 server:
-  port: 9004
+  port: 9002
 spring:
   application:
-    name: fw-transaction-lcn-order
+    name: fw-transaction-lcn-tcc-order
   #数据库配置  start
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
