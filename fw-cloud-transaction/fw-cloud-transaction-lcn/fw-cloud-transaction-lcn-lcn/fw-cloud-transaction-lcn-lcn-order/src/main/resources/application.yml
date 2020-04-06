@@ -35,4 +35,4 @@ feign:
   hystrix:
     enabled: true
 hystrix:
-  shareSecurityContext: true
+  shareSecurityContext: true #设置为true，这样做会自动配置Hystrix并发策略插件挂钩，将SecurityContext从主线程传输到Hystrix命令使用的线程

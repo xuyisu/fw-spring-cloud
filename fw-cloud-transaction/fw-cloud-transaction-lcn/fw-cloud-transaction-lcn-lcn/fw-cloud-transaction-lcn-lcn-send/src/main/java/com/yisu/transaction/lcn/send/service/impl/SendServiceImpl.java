@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
- * @description 商品表-业务实现
+ * @description 发货-业务实现
  * @author xuyisu
  * @date '2020-03-25'
  */

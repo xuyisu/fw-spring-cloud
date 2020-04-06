@@ -1,7 +1,7 @@
 package com.yisu.transacation.base.dao.enums;
 
 /**
- * @description 启用禁用枚举
+ * @description 订单状态枚举
  * @author xuyisu
  * @date 2019/2/1
  */
