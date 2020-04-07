@@ -52,7 +52,7 @@
 
  
 ### 官方教程
-#####扫码加入即可永久阅读
+##### 扫码加入即可永久阅读
  ![](images/joinin.jpeg)
  >很多代码之前是有交互和修改的，具体请参考教程使用，当然如果你已经精通Spring Cloud ，阅读这些案例也会帮你回顾和加深印象。
  [教程地址](https://www.kancloud.cn/xuyisu/springcloud_springboot)
