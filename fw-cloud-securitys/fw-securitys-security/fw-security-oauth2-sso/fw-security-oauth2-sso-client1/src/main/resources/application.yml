@@ -1,0 +1,17 @@
+server:
+  port: 8081  #应用端口号
+  servlet:
+    context-path: /client1
+security:
+  oauth2:
+    client:
+      client-id: test1
+      client-secret: test1
+      user-authorization-uri: http://127.0.0.1:8080/server/oauth/authorize
+      access-token-uri: http://127.0.0.1:8080/server/oauth/token
+    resource:
+      jwt:
+        key-uri: http://127.0.0.1:8080/server/oauth/token_key
+logging:
+  level:
+    com.yisu: debug #日志级别

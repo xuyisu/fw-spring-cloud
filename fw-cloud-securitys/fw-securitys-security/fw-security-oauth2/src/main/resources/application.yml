@@ -1,0 +1,34 @@
+server:
+  port: 8080  #应用端口号
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/security-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+  #redis 配置
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1s
+        min-idle: 0
+        max-idle: 8
+fw:
+  security:
+    oauth:
+      jwtSigningKey: security
+      clients[0]:
+        clientId: test1
+        clientSecret: test1
+      clients[1]:
+        clientId: test2
+        clientSecret: test2
+    oauth2:
+      storeType: redis  # 还可以设置jwt
+logging:
+  level:
+    com.yisu: debug #日志级别

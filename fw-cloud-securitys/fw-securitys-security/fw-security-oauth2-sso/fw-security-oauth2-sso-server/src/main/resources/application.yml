@@ -1,0 +1,21 @@
+server:
+  port: 8080  #应用端口号
+  servlet:
+    context-path: /server
+fw:
+  security:
+    oauth:
+      jwtSigningKey: security
+      clients[0]:
+        clientId: test1
+        clientSecret: test1
+        redirectUri: http://127.0.0.1:8081/client1/login
+        autoApprove: true
+      clients[1]:
+        clientId: test2
+        clientSecret: test2
+        redirectUri: http://127.0.0.1:8082/client2/login
+        autoApprove: true
+logging:
+  level:
+    com.yisu: debug #日志级别

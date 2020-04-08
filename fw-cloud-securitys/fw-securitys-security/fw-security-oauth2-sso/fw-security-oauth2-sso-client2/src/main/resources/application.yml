@@ -1,0 +1,18 @@
+#本节说的是SpringSecutity的单点登录
+server:
+  port: 8082  #应用端口号
+  servlet:
+    context-path: /client2
+security:
+  oauth2:
+    client:
+      client-id: test2
+      client-secret: test2
+      user-authorization-uri: http://127.0.0.1:8080/server/oauth/authorize
+      access-token-uri: http://127.0.0.1:8080/server/oauth/token
+    resource:
+      jwt:
+        key-uri: http://127.0.0.1:8080/server/oauth/token_key
+logging:
+  level:
+    com.yisu: debug #日志级别

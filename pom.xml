@@ -28,6 +28,7 @@
         <module>fw-cloud-docker</module>
         <module>fw-cloud-base-dao</module>
         <module>fw-cloud-transaction</module>
+        <module>fw-cloud-securitys</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

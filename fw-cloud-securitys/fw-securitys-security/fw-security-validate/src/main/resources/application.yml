@@ -1,0 +1,22 @@
+server:
+  port: 8080  #应用端口号
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/security-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    username: root
+    password: 123456
+fw:
+  security:
+    browser:
+      loginPage: /default-login.html  #默认登录页面地址  loginType为REDIRECT时起作用
+      loginType: JSON  #两种  REDIRECT  重定向页面 ，JSON 返回json描述
+      code:
+        image:
+          length: 4 #设置验证码的位数
+          expireIn: 60 #设置验证码超时时间（秒）
+          width:  67 #验证码显示的宽度（px）
+          height: 23 #验证码显示的高度（px）
+logging:
+  level:
+    com.yisu: debug #日志级别
