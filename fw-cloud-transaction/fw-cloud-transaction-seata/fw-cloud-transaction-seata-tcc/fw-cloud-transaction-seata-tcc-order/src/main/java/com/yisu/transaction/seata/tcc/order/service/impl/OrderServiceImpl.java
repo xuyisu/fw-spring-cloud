@@ -38,7 +38,7 @@ public class OrderServiceImpl implements OrderService {
         log.info("[订单状态{}]=>{},当前商品id=>{},商品名称=>{}",fwTradeLog.getOrderId(), StatusEnum.TWO.getDesc(),fwTradeLog.getProductId(),fwTradeLog.getProductName());
 
         remoteSendServiceFeign.sendOrder(fwTradeLog);
-        int i=1/0;
+//        int i=1/0;
     }
 
 

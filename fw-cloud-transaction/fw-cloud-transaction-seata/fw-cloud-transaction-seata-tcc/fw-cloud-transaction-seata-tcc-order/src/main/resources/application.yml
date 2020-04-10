@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9002
 spring:
   application:
     name: fw-transaction-seata-tcc-order
