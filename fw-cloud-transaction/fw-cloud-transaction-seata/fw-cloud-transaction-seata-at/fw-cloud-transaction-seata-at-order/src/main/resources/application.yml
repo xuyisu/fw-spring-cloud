@@ -17,7 +17,7 @@ spring:
         server-addr: localhost:8848
     alibaba:
       seata:
-        tx-service-group: order-service-group
+        tx-service-group: fwcloud_tx_group
 feign:
   hystrix:
     enabled: true
