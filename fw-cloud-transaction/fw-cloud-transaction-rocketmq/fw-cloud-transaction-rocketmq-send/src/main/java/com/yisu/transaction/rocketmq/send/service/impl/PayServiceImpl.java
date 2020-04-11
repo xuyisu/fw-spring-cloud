@@ -7,6 +7,7 @@ import com.yisu.transaction.rocketmq.send.service.PayService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @description 商品表-业务实现
@@ -21,6 +22,7 @@ public class PayServiceImpl implements PayService {
     private FwTradeLogService fwTradeLogService;
 
     @Override
+    @Transactional
     public void payOrder(FwTradeLog fwTradeLog) {
         fwTradeLog.setStatus(StatusEnum.THREE.getValue());
         fwTradeLog.setStatusDsc(StatusEnum.THREE.getDesc());

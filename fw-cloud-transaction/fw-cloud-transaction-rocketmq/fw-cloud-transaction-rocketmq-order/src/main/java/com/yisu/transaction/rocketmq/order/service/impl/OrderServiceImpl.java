@@ -65,6 +65,6 @@ public class OrderServiceImpl implements OrderService {
         transactionLog.setRemark(remark);
         fwTransactionLogService.save(transactionLog);
         log.info("事务ID=>{} 本地事务执行成功", transactionId);
-//        int i=10/0;
+        int i=10/0;
     }
 }

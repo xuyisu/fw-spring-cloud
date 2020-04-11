@@ -17,6 +17,13 @@
     </modules>
 
     <dependencies>
+        <!--基础包-->
+        <dependency>
+            <groupId>com.yisu.cloud</groupId>
+            <artifactId>fw-cloud-transaction-base-dao</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <!--rocketmq-->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-spring-boot-starter</artifactId>
