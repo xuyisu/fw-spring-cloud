@@ -1,0 +1,15 @@
+server:
+  port: 8801
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: 123456
+    jedis:
+      pool:
+        max-active: 1024
+        max-wait: 10000
+        max-idle: 200
+        min-idle: 0
+    timeout: 10000
+    block-when-exhausted: true
