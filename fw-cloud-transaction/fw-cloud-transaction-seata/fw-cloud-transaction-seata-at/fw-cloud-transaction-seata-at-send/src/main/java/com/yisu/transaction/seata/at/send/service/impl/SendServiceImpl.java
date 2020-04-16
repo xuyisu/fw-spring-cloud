@@ -1,13 +1,16 @@
-package com.yisu.transaction.rocketmq.send.service.impl;
+package com.yisu.transaction.seata.tcc.send.service.impl;
 
 import com.yisu.transacation.base.dao.enums.StatusEnum;
 import com.yisu.transacation.base.dao.model.FwTradeLog;
 import com.yisu.transacation.base.dao.service.FwTradeLogService;
-import com.yisu.transaction.rocketmq.send.service.PayService;
+import com.yisu.transaction.seata.tcc.send.service.SendService;
+import io.seata.rm.tcc.api.BusinessActionContext;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @description 商品表-业务实现
@@ -16,18 +19,20 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 @Slf4j
-public class PayServiceImpl implements PayService {
+public class SendServiceImpl implements SendService {
+
 
     @Autowired
     private FwTradeLogService fwTradeLogService;
 
+
+    @GlobalTransactional
     @Override
-    @Transactional
-    public void payOrder(FwTradeLog fwTradeLog) {
+    public void sendOrder(FwTradeLog fwTradeLog) {
         fwTradeLog.setStatus(StatusEnum.THREE.getValue());
         fwTradeLog.setStatusDsc(StatusEnum.THREE.getDesc());
         fwTradeLogService.save(fwTradeLog);
         log.info("[订单状态{}]=>{},当前商品id=>{},商品名称=>{}",fwTradeLog.getOrderId(), StatusEnum.THREE.getDesc(),fwTradeLog.getProductId(),fwTradeLog.getProductName());
-
     }
+
 }

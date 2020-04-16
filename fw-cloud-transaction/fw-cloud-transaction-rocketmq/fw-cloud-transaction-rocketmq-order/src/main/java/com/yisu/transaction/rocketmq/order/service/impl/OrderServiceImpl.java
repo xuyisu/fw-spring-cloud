@@ -12,6 +12,7 @@ import org.apache.rocketmq.spring.support.RocketMQHeaders;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
@@ -49,10 +50,10 @@ public class OrderServiceImpl implements OrderService {
                 fwTradeLog // 额外参数，供后续回调使用
         );
 
-
     }
 
     @Override
+    @Transactional
     public void payOrder(FwTradeLog fwTradeLog,String transactionId) {
         fwTradeLogService.save(fwTradeLog);
         log.info("[订单状态{}]=>{},当前商品id=>{},商品名称=>{}",fwTradeLog.getOrderId(), StatusEnum.TWO.getDesc(),fwTradeLog.getProductId(),fwTradeLog.getProductName());
@@ -64,5 +65,6 @@ public class OrderServiceImpl implements OrderService {
         transactionLog.setRemark(remark);
         fwTransactionLogService.save(transactionLog);
         log.info("事务ID=>{} 本地事务执行成功", transactionId);
+        int i=10/0;
     }
 }

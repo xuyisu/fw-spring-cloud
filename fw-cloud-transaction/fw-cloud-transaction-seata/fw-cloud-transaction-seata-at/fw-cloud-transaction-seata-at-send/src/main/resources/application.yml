@@ -2,7 +2,7 @@ server:
   port: 9003
 spring:
   application:
-    name: fw-transaction-seata-tcc-send
+    name: fw-transaction-seata-at-send
   #数据库配置  start
   datasource:
     druid:

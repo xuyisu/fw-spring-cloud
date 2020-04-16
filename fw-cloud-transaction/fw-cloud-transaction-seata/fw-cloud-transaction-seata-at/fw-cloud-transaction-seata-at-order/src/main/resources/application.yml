@@ -1,5 +1,5 @@
 server:
-  port: 9004
+  port: 9002
 spring:
   application:
     name: fw-transaction-seata-at-order
@@ -17,7 +17,7 @@ spring:
         server-addr: localhost:8848
     alibaba:
       seata:
-        tx-service-group: order-service-group
+        tx-service-group: fwcloud_tx_group
 feign:
   hystrix:
     enabled: true

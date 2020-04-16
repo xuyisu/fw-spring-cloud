@@ -11,13 +11,5 @@
 
     <artifactId>fw-cloud-transaction-rocketmq-order</artifactId>
 
-    <dependencies>
-        <!-- base-dao -->
-        <dependency>
-            <groupId>com.yisu.cloud</groupId>
-            <artifactId>fw-cloud-transaction-base-dao</artifactId>
-            <version>${version}</version>
-        </dependency>
-    </dependencies>
 
 </project>

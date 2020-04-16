@@ -1,5 +1,5 @@
 server:
-  port: 9002
+  port: 9003
 spring:
   #数据库配置  start
   datasource:
