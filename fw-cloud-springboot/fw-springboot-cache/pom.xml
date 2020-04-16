@@ -15,6 +15,7 @@
         <module>fw-springboot-cache-guava</module>
         <module>fw-springboot-cache-redis</module>
         <module>fw-springboot-cache-jedis</module>
+        <module>fw-springboot-cache-redis-serializer</module>
     </modules>
 
 
