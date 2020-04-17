@@ -26,7 +26,7 @@ public class MyStringSerializer implements RedisSerializer<String> {
 
     @Override
     public String deserialize(byte[] bytes) {
-        String keyPrefix = "tenant_name:";
+        String keyPrefix = "tenant_name:"+SerializerThreadlocal.get();
         String saveKey = new String ( bytes, charset );
         int indexOf = saveKey.indexOf ( keyPrefix );
         if (indexOf > 0) {
@@ -40,7 +40,7 @@ public class MyStringSerializer implements RedisSerializer<String> {
 
     @Override
     public byte[] serialize(String string) {
-        String keyPrefix = "tenant_name:";
+        String keyPrefix = "tenant_name:"+SerializerThreadlocal.get();
         String key = keyPrefix + string;
         log.info( "key:"+key);
         return (key == null ? null : key.getBytes ( charset ));

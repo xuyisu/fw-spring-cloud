@@ -1,5 +1,6 @@
 package com.yisu.redistemplate.util;
 
+import com.yisu.redistemplate.config.SerializerThreadlocal;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,6 +50,14 @@ public class RedisUtilsTest {
      */
     @Test
     public void testRedisTemplate() {
+
+        for (int i = 0; i <10 ; i++) {
+            setinfo("nike"+i);
+        }
+    }
+
+    private  void  setinfo(String key){
+        SerializerThreadlocal.set(key);
         ValueOperations<String, String> operations = (ValueOperations<String, String>) redisTemplate
                 .opsForValue();
         operations.set("lisi", "999");

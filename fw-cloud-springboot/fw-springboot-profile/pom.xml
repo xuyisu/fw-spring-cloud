@@ -37,7 +37,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
                     <finalName>${project.artifactId}</finalName>
-                    <mainClass>com.lmis.SpringBootAuthApplication</mainClass>
+                    <mainClass>com.yisu.FwBootRedisTemplateApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>
