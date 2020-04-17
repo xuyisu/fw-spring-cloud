@@ -1,5 +1,7 @@
 package com.yisu.security.config;
 
+import com.yisu.security.authentication.FwAuthenctiationFailureHandler;
+import com.yisu.security.authentication.FwAuthenticationSuccessHandler;
 import com.yisu.security.filter.ValidateCodeFilter;
 import com.yisu.security.properties.SecurityProperties;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,11 +27,11 @@ import javax.sql.DataSource;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-//    @Autowired
-//    private FwAuthenticationSuccessHandler fwAuthenticationSuccessHandler;
-//
-//    @Autowired
-//    private FwAuthenctiationFailureHandler fwAuthenctiationFailureHandler;
+    @Autowired
+    private FwAuthenticationSuccessHandler fwAuthenticationSuccessHandler;
+
+    @Autowired
+    private FwAuthenctiationFailureHandler fwAuthenctiationFailureHandler;
 
     @Autowired
     private SecurityProperties securityProperties;
@@ -45,14 +47,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-//        ValidateCodeFilter validateCodeFilter=new ValidateCodeFilter();
-//        validateCodeFilter.setAuthenticationFailureHandler(fwAuthenctiationFailureHandler);
         http.addFilterBefore(validateCodeFilter, UsernamePasswordAuthenticationFilter.class)
                 .formLogin()
                 .loginPage("/authentication/require")
                 .loginProcessingUrl("/authentication/form")
-//                .successHandler(fwAuthenticationSuccessHandler)
-//                .failureHandler(fwAuthenctiationFailureHandler)
+                .successHandler(fwAuthenticationSuccessHandler)
+                .failureHandler(fwAuthenctiationFailureHandler)
                 .and()
                 .rememberMe()
                 .tokenRepository(persistentTokenRepository())
