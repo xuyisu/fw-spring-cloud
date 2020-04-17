@@ -43,7 +43,7 @@
         <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
         <spring-cloud-alibaba.version>2.2.0.RELEASE</spring-cloud-alibaba.version>
         <mysql.version>5.1.48</mysql.version>
-        <hutool.version>5.0.6</hutool.version>
+        <hutool.version>5.2.5</hutool.version>
         <guava.version>22.0</guava.version>
         <HikariCP.version>2.7.9</HikariCP.version>
         <druid.version>1.1.10</druid.version>

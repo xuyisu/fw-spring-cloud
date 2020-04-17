@@ -3,8 +3,12 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/security-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://${dbIp}:3306/security-demo?useUnicode=yes&characterEncoding=UTF-8&useSSL=false
     username: root
+    password: 123456
+  redis:
+    host: localhost
+    port: 6379
     password: 123456
 fw:
   security:
