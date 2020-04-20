@@ -37,9 +37,6 @@ public class FwAuthenctiationFailureHandler extends SimpleUrlAuthenticationFailu
 	private SecurityProperties securityProperties;
 
 	
-	/* (non-Javadoc)
-	 * @see org.springframework.security.web.authentication.AuthenticationFailureHandler#onAuthenticationFailure(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse, org.springframework.security.core.AuthenticationException)
-	 */
 	@Override
 	public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
                                         AuthenticationException exception) throws IOException, ServletException {

@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
@@ -32,7 +31,6 @@ public class ValidateCodeFilter extends OncePerRequestFilter implements Initiali
     /**
      * 验证码校验失败处理器
      */
-    @Autowired
     private AuthenticationFailureHandler authenticationFailureHandler;
 
     private final ValidateCodeService validateCodeService;
