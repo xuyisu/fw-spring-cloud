@@ -48,12 +48,10 @@
 | 高级    | 分布式事务(LCN)  |  OK  |
 | 高级    | 分布式事务(Seata)  |  OK  |
 | 容器化   |   docker |   OK  |
-| 容器化   |   k8s|   进行中  |
+| 容器化   |   k8s|   OK  |
 
  
 ### 官方教程
-##### 扫码加入即可永久阅读
- ![](images/joinin.jpeg)
  >很多代码之前是有交互和修改的，具体请参考教程使用，当然如果你已经精通Spring Cloud ，阅读这些案例也会帮你回顾和加深印象。
  [教程地址](https://www.kancloud.cn/xuyisu/springcloud_springboot)
 
