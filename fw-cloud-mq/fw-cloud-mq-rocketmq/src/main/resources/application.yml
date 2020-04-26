@@ -1,0 +1,9 @@
+server:
+  port: 8781
+spring:
+  application:
+    name: fw-cloud-mq-rocketmq
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: test-group
