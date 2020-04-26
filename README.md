@@ -15,7 +15,7 @@
 |  SpringBoot   | 2.2.1.RELEASE   |
 |  SpringCloud   | Hoxton.RELEASE   |
 |  SpringCloud Alibaba   | 2.1.1.RELEASE   |
-|  Hutool   | 5.0.6   |
+|  Hutool   | 5.2.5   |
  
 ### 涉及知识点
 |   阶段  |  知识点   | 状态   |
