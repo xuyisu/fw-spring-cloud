@@ -16,6 +16,7 @@
 |  SpringCloud   | Hoxton.RELEASE   |
 |  SpringCloud Alibaba   | 2.1.1.RELEASE   |
 |  Hutool   | 5.2.5   |
+|  Drools   | 7.7.0.Final   |
  
 ### 涉及知识点
 |   阶段  |  知识点   | 状态   |

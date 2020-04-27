@@ -29,6 +29,7 @@
         <module>fw-cloud-base-dao</module>
         <module>fw-cloud-transaction</module>
         <module>fw-cloud-securitys</module>
+        <module>fw-cloud-drools</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -50,6 +51,7 @@
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <rocketmq.version>2.0.4</rocketmq.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
+        <drools.version>7.7.0.Final</drools.version>
     </properties>
 
     <dependencyManagement>
@@ -62,6 +64,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!--spring-cloud-alibaba-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -95,7 +98,37 @@
                 <artifactId>txlcn-txmsg-netty</artifactId>
                 <version>${codingapi.txlcn.version}</version>
             </dependency>
-
+            <!--规则引擎-->
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-api</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-core</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-compiler</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-decisiontables</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.drools</groupId>
+                <artifactId>drools-templates</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.kie</groupId>
+                <artifactId>kie-spring</artifactId>
+                <version>${drools.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
