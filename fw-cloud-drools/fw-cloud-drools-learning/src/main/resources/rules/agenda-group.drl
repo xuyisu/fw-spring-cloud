@@ -1,0 +1,36 @@
+package agendagroup.test
+
+//第一个规则
+rule "rule_agendagroup_1"
+    agenda-group "agenda_group_1"//agenda-group属性为议程分组，只有获得焦点的组中的规则才可以触发
+    when
+        eval(false)
+    then
+        System.out.println("规则：rule_agendagroup_1触发了...");
+end
+
+//第二个规则
+rule "rule_agendagroup_2"
+    agenda-group "agenda_group_1"
+    when
+    then
+        System.out.println("规则：rule_agendagroup_2触发了...");
+end
+
+//第三个规则
+rule "rule_agendagroup_3"
+    agenda-group "agenda_group_2"
+    auto-focus true //auto-focus属性用于指定当前所属组自动获取焦点
+    when
+    then
+        System.out.println("规则：rule_agendagroup_3触发了...");
+end
+
+//第四个规则
+rule "rule_agendagroup_4"
+    agenda-group "agenda_group_2"
+    auto-focus false
+    when
+    then
+        System.out.println("规则：rule_agendagroup_4触发了...");
+end

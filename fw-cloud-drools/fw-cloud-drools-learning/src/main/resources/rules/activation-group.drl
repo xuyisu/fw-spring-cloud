@@ -1,0 +1,19 @@
+package activationgroup.test
+
+rule "rule_activationgroup_1"
+    activation-group "myActivationGroup"//对于同一个组内的规则，只能有一个触发
+    salience 5
+    when
+        //如果条件不写，默认为true，表示规则匹配成功
+    then
+        System.out.println("规则：rule_activationgroup_1触发了...");
+end
+
+rule "rule_activationgroup_2"
+    activation-group "myActivationGroup"
+    salience 10
+    when
+        //如果条件不写，默认为true，表示规则匹配成功
+    then
+        System.out.println("规则：rule_activationgroup_2触发了...");
+end
