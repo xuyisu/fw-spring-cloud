@@ -1,0 +1,42 @@
+package book.discount.test
+import com.yisu.drools.entity.Order
+
+/*
+    这是一个多行注释
+*/
+
+//所购图书总价在100元以下的没有优惠
+rule "rule_book_discount_1"
+    when
+        $order:Order(originalPrice < 100) //模式匹配，到规则引擎中（工作内存）查找Order对象
+    then
+        $order.setRealPrice($order.getOriginalPrice());
+        System.out.println("规则：所购图书总价在100元以下的没有优惠 rule_book_discount_1触发了...");
+end
+
+//所购图书总价在100到200元的优惠20元
+rule "rule_book_discount_2"
+    when
+        $order:Order(originalPrice >= 100 && originalPrice < 200) //模式匹配，到规则引擎中（工作内存）查找Order对象
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 20);
+        System.out.println("规则：所购图书总价在100到200元的优惠20元 rule_book_discount_2触发了...");
+end
+
+//所购图书总价在200到300元的优惠50元
+rule "rule_book_discount_3"
+    when
+        $order:Order(originalPrice >= 200 && originalPrice < 300) //模式匹配，到规则引擎中（工作内存）查找Order对象
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 50);
+        System.out.println("规则：所购图书总价在200到300元的优惠50元 rule_book_discount_3触发了...");
+end
+
+//所购图书总价在300元以上的优惠100元
+rule "rule_book_discount_4"
+    when
+        $order:Order(originalPrice >= 300) //模式匹配，到规则引擎中（工作内存）查找Order对象
+    then
+        $order.setRealPrice($order.getOriginalPrice() - 100);
+        System.out.println("规则：所购图书总价在300元以上的优惠100元 rule_book_discount_4触发了...");
+end

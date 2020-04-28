@@ -1,5 +1,7 @@
 package activationgroup.test
-
+/*
+当前规则文件用于测试activation-group属性
+*/
 rule "rule_activationgroup_1"
     activation-group "myActivationGroup"//对于同一个组内的规则，只能有一个触发
     salience 5

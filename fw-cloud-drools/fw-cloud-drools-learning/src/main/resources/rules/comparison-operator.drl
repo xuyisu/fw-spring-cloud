@@ -1,0 +1,55 @@
+package comparisonOperator.test
+import com.yisu.drools.entity.ComparisonOperator
+/*
+ 当前规则文件用于测试Drools提供的比较操作符
+*/
+
+//测试比较操作符contains
+rule "rule_comparison_contains"
+    when
+        ComparisonOperator(names contains "张三")
+        ComparisonOperator(list contains names)
+    then
+        System.out.println("规则：rule_comparison_contains触发了...");
+end
+
+//测试比较操作符not contains
+rule "rule_comparison_notcontains"
+    when
+        ComparisonOperator(names not contains "张三")
+        ComparisonOperator(list not contains names)
+    then
+        System.out.println("规则：rule_comparison_notcontains触发了...");
+end
+
+//测试比较操作符memberOf
+rule "rule_comparison_memberof"
+    when
+        ComparisonOperator(names memberOf list)
+    then
+        System.out.println("规则：rule_comparison_memberof触发了...");
+end
+
+//测试比较操作符 not memberOf
+rule "rule_comparison_not_memberof"
+    when
+        ComparisonOperator(names not memberOf list)
+    then
+        System.out.println("规则：rule_comparison_not_memberof触发了...");
+end
+
+//测试比较操作符 matches
+rule "rule_comparison_matches"
+    when
+        ComparisonOperator(names matches "王.*")
+    then
+        System.out.println("规则：rule_comparison_matches触发了...");
+end
+
+//测试比较操作符 not matches
+rule "rule_comparison_not_matches"
+    when
+        ComparisonOperator(names not matches "王.*")
+    then
+        System.out.println("规则：rule_comparison_not_matches触发了...");
+end

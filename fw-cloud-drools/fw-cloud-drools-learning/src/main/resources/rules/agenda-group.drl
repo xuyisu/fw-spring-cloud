@@ -1,5 +1,8 @@
 package agendagroup.test
 
+/*
+当前规则文件用于测试agenda-group属性
+*/
 //第一个规则
 rule "rule_agendagroup_1"
     agenda-group "agenda_group_1"//agenda-group属性为议程分组，只有获得焦点的组中的规则才可以触发
