@@ -1,0 +1,12 @@
+package test.dateeffective
+import java.text.SimpleDateFormat
+import java.util.Date
+/*
+当前规则文件用于测试date-effective属性
+*/
+rule "rule_dateeffective_1"
+    date-effective "2019-04-10 10:00" //date-effective属性用于指定当前规则生效时间
+    when
+    then
+        System.out.println("规则：rule_dateeffective_1触发了，触发的时间为：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+end

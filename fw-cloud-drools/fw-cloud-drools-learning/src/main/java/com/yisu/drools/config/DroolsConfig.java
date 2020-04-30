@@ -22,6 +22,11 @@ import java.io.IOException;
  */
 @Configuration
 public class DroolsConfig {
+
+    static {
+        System.setProperty("drools.dateformat", "yyyy-MM-dd HH:mm");
+    }
+
     //指定规则文件存放的目录
     private static final String RULES_PATH = "rules/";
     private final KieServices kieServices = KieServices.Factory.get();
