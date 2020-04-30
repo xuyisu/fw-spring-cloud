@@ -1,0 +1,29 @@
+//当前规则文件用于测试执行优先级
+package testsalience
+
+//定义第一个规则
+rule "rule_salience_1"
+    salience 10//指定规则执行的优先级，数值越大越优先
+    when
+        eval(true)//返回true，即当前规则匹配成功
+    then
+        System.out.println("规则：rule_1触发了...");
+end
+
+//定义第二个规则
+rule "rule_salience_2"
+    salience 11
+    when
+        eval(true)//返回true，即当前规则匹配成功
+    then
+        System.out.println("规则：rule_2触发了...");
+end
+
+//定义第二个规则
+rule "rule_salience_3"
+    salience 5
+    when
+        eval(true)//返回true，即当前规则匹配成功
+    then
+        System.out.println("规则：rule_3触发了...");
+end

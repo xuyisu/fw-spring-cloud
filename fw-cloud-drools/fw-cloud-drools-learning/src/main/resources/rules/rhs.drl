@@ -1,0 +1,24 @@
+package testrhs
+import org.drools.core.WorkingMemory
+/*
+用于测试RHS部分drools对象的相关方法
+*/
+rule "rule_rhs_1"
+    when
+    then
+        System.out.println("规则：rule_rhs_1触发了...");
+        WorkingMemory workingMemory = drools.getWorkingMemory();//获得工作内存对象，本质上是一个会话对象
+        System.out.println(workingMemory);
+        org.drools.core.definitions.rule.impl.RuleImpl rule = drools.getRule();//获得当前规则对象
+        System.out.println(rule);
+        System.out.println(rule.getAutoFocus());
+        System.out.println(rule.getId());
+        System.out.println(rule.getDateExpires());
+        drools.halt();//当前方法表示终止后面所有规则的执行
+end
+
+rule "rule_rhs_2"
+    when
+    then
+        System.out.println("规则：rule_rhs_2触发了...");
+end

@@ -1,0 +1,19 @@
+//当前规则文件用于测试timer属性
+package testtimer
+import java.util.Date
+import java.text.SimpleDateFormat
+//timer第一种用方式
+rule "rule_timer_1"
+    timer (3s 2s)//当前timer属性用于指定规则触发的时间，当前表达式表示3s后触发，每个2s触发一次
+    when
+    then
+        System.out.println("规则：rule_timer_1触发了...");
+end
+
+//timer第二种用方式
+rule "rule_timer_2"
+    timer (cron:0/2 * * * * ?)//基于cron表达式指定规则触发的时间
+    when
+    then
+        System.out.println("规则：rule_timer_2触发了...触发的时间为：" + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()));
+end

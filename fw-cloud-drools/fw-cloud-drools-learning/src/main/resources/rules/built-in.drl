@@ -1,0 +1,56 @@
+package student
+import com.yisu.drools.entity.Student
+/*
+当前规则文件用于测试Drools内置方法
+*/
+//当前规则用于测试retract内置方法
+rule "rule_built_in_1"
+    salience 10
+    dialect "java"//指定规则使用的语言
+    enabled true//enabled属性用于指定当前规则是否启用，取值为true或者false，默认值true
+    when
+        $student:Student(age == 10)
+    then
+        retract($student);//retract方法作用是删除工作内存中的Fact对象，会导致相关规则重新匹配
+        System.out.println("规则：rule_built_in_1 要求Student的age等于10岁用于删除触发了...");
+end
+
+//当前规则用于测试insert内置方法
+rule "rule_built_in_2"
+    when
+        $student:Student(age == 10)
+    then
+        Student s = new Student();
+        s.setAge(5);
+        insert(s);//insert方法作用是向工作内存中插入Fact对象，会导致相关规则重新匹配
+        System.out.println("规则：rule_built_in_2 要求Student的age等于10岁触发了...");
+end
+
+//当前规则用于测试update内置方法
+rule "rule_built_in_3"
+    when
+        $student:Student(age < 10)
+    then
+        $student.setAge(15);
+        update($student);//update方法用于更新Fact对象，会导致相关规则重新匹配
+        System.out.println("规则：rule_built_in_3 要求Student的age小于10岁触发了...");
+end
+
+//当前规则用于测试update内置方法
+rule "rule_built_in_4"
+    when
+        $student:Student(age < 20 && age > 10)
+    then
+        $student.setAge(25);
+        update($student);
+        System.out.println("规则：rule_built_in_4 要求Student的age大于10岁并且小于20岁触发了...");
+end
+
+//当前规则用于测试update内置方法
+rule "rule_built_in_5"
+    when
+        $student:Student(age > 20)
+    then
+        //$student.setAge(15);
+        System.out.println("规则：rule_built_in_5 要求Student的age大于20岁触发了...");
+end
