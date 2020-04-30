@@ -1,0 +1,19 @@
+ package testfunction
+ import com.yisu.drools.entity.Student
+/*
+当前规则文件用于测试function函数
+*/
+ //定义一个函数
+ function String sayHello(String name){
+    return "hello " + name;
+ }
+
+ //定义一个规则，在规则中调用上面的函数
+ rule "rule_function_1"
+    when
+        $s:Student(age > 60)
+    then
+        //调用定义的函数
+        String ret = sayHello($s.getName());
+        System.out.println("调用sayHello函数，获得返回结果：" + ret);
+end

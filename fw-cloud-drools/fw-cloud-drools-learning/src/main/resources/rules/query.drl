@@ -1,0 +1,14 @@
+package testquery
+import com.yisu.drools.entity.Student
+/*
+用于测试query查询
+*/
+//定义一个Query查询,可以到工作内存中查询符合条件的Fact对象
+query "query_1"
+    $s:Student(age == 50)
+end
+
+//定义一个Query查询,可以到工作内存中查询符合条件的Fact对象，带有查询参数
+query "query_2"(String sname)
+    $s:Student(age > 5 && name == sname)
+end

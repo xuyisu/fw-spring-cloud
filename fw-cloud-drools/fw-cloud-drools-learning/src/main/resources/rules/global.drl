@@ -1,0 +1,27 @@
+//当前规则文件用于测试global全局变量
+package testglobal
+import com.yisu.drools.service.UserService
+global java.lang.Integer count//定义一个包装类型的全局变量
+global java.util.List gList//定义一个集合类型的全局变量
+global UserService userService//定义一个JavaBean类型的全局变量
+
+rule "rule_global_1"
+    when
+    then
+        count += 10;//对于包装类型的全局变量的修改只针对当前规则生效
+        System.out.println("规则：rule_global_1触发了...");
+        System.out.println("全局变量count计算之后的值为：" + count);
+
+        gList.add("张三");//修改集合类型的全局变量
+        System.out.println("全局变量gList的size：" + gList.size());
+        userService.save();
+end
+
+rule "rule_global_2"
+    when
+    then
+        System.out.println("规则：rule_global_2触发了...");
+        System.out.println("全局变量的值为：" + count);
+        System.out.println("全局变量gList的size：" + gList.size());
+        userService.save();
+end

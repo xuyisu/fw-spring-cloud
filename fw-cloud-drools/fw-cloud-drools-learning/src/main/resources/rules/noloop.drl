@@ -1,0 +1,13 @@
+package testnoloop
+import com.yisu.drools.entity.Student
+/*
+用于测试noloop防止规则执行时死循环问题
+*/
+rule "rule_noloop_1"
+    no-loop true//使用no-loop解决死循环问题
+    when
+        $s:Student(age == 50)
+    then
+        update($s);//调用update方法会导致相关规则重新匹配
+        System.out.println("规则：rule_noloop触发了...");
+end

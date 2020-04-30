@@ -1,0 +1,72 @@
+package testlhs
+import com.yisu.drools.entity.Student
+/*
+当前规则文件用于测试LHS部分
+*/
+//编写规则，演示in关键字用法
+rule "rule_lhs_1"
+    when
+        $s:Student(name in ("张三","李四","王五"))
+    then
+        System.out.println("规则：rule_lhs_1触发了...");
+end
+
+//编写规则，演示not in关键字用法
+rule "rule_lhs_2"
+    when
+        $s:Student(name not in ("张三","李四","王五"))
+    then
+        System.out.println("规则：rule_lhs_2触发了...");
+end
+
+//编写规则，演示eval关键字用法
+rule "rule_lhs_3"
+    when
+        eval(1==2)
+    then
+        System.out.println("规则：rule_lhs_3触发了...");
+end
+
+//编写规则，演示not关键字用法
+rule "rule_lhs_4"
+    when
+        not Student()
+    then
+        System.out.println("规则：rule_lhs_4触发了...");
+end
+
+//编写规则，演示exists关键字用法
+rule "rule_lhs_5"
+    when
+        exists Student()
+    then
+        System.out.println("规则：rule_lhs_5触发了...");
+end
+
+//编写规则，演示exists关键字用法----没有使用exists关键字
+rule "rule_lhs_6"
+    when
+        Student()
+    then
+        System.out.println("规则：rule_lhs_6触发了...");
+end
+
+//编写规则，演示extends关键字实现规则的条件部分继承
+rule "rule_lhs_7"
+    when
+        Student(age > 10)
+    then
+        System.out.println("规则：rule_lhs_7触发了...");
+end
+
+//编写规则，演示extends关键字实现规则的条件部分继承
+rule "rule_lhs_8" extends "rule_lhs_7"
+    when
+        /*
+        此处的条件虽然只写了一个，但是从上面的规则继承了一个条件，
+        所以当前规则存在两个条件，即Student(age < 20)和Student(age > 10)
+        */
+        Student(age < 20)
+    then
+        System.out.println("规则：rule_lhs_8触发了...");
+end
