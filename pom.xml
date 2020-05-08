@@ -30,6 +30,7 @@
         <module>fw-cloud-transaction</module>
         <module>fw-cloud-securitys</module>
         <module>fw-cloud-drools</module>
+        <module>fw-cloud-starter-sample</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>

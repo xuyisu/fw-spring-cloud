@@ -1,0 +1,7 @@
+fwcloud:
+  sample:
+    enable: true
+    user: fwcloud
+
+server:
+  port: 8099
