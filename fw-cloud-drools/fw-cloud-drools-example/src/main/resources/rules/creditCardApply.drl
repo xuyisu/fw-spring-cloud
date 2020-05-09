@@ -1,0 +1,114 @@
+package com.yisu.drools.example.entity
+import com.yisu.drools.example.entity.CreditCardApplyInfo
+
+//合法性检查
+rule "如果申请人既没房也没车，同时学历为大专以下，并且月薪少于5000，那么不通过"
+    salience 10
+    no-loop true
+    when
+        $c:CreditCardApplyInfo(hasCar == false &&
+                                hasHouse == false &&
+                                education == CreditCardApplyInfo.EDUCATION_1 &&
+                                monthlyIncome < 5000)
+    then
+        $c.setCheckResult(false);
+        drools.halt();
+end
+rule "如果申请人既没房也没车，同时学历为大专或本科，并且月薪少于3000，那么不通过"
+    salience 10
+    no-loop true
+    when
+        $c:CreditCardApplyInfo(hasCar == false &&
+                                hasHouse == false &&
+                                (education == CreditCardApplyInfo.EDUCATION_2  ||
+                                education == CreditCardApplyInfo.EDUCATION_3) &&
+                                monthlyIncome < 3000)
+    then
+        $c.setCheckResult(false);
+        drools.halt();
+end
+rule "如果申请人既没房也没车，同时学历为本科以上，并且月薪少于2000，同时之前没有信用卡的，那么不通过"
+    salience 10
+    no-loop true
+    when
+        $c:CreditCardApplyInfo(hasCar == false &&
+                                hasHouse == false &&
+                                education == CreditCardApplyInfo.EDUCATION_4 &&
+                                monthlyIncome < 2000 &&
+                                hasCreditCardCount == 0)
+    then
+        $c.setCheckResult(false);
+        drools.halt();
+end
+rule "如果申请人现有的信用卡数量大于10，那么不通过"
+    salience 10
+    no-loop true
+    when
+        $c:CreditCardApplyInfo(hasCreditCardCount > 10)
+    then
+        $c.setCheckResult(false);
+        drools.halt();
+end
+//--------------------------------------------------------------------------
+//确定额度
+rule "如果申请人有房有车，或者月收入在20000以上，那么发放的信用卡额度为15000"
+    salience 1
+    no-loop true
+    activation-group "quota_group"
+    when
+        $c:CreditCardApplyInfo(checkResult == true &&
+                                ((hasHouse == true && hasCar == true) ||
+                                (monthlyIncome > 20000)))
+    then
+        $c.setQuota(15000);
+end
+rule "如果申请人没房没车，但月收入在10000~20000之间，那么发放的信用卡额度为6000"
+    salience 1
+    no-loop true
+    activation-group "quota_group"
+    when
+        $c:CreditCardApplyInfo(checkResult == true &&
+                                hasHouse == false &&
+                                hasCar == false &&
+                                monthlyIncome >= 10000 &&
+                                monthlyIncome <= 20000)
+    then
+        $c.setQuota(6000);
+end
+rule "如果申请人没房没车，月收入在10000以下，那么发放的信用卡额度为3000"
+    salience 1
+    no-loop true
+    activation-group "quota_group"
+    when
+        $c:CreditCardApplyInfo(checkResult == true &&
+                                        hasHouse == false &&
+                                        hasCar == false &&
+                                        monthlyIncome < 10000)
+    then
+        $c.setQuota(3000);
+end
+rule "如果申请人有房没车或者没房但有车，月收入在10000以下，那么发放的信用卡额度为5000"
+    salience 1
+    no-loop true
+    activation-group "quota_group"
+    when
+        $c:CreditCardApplyInfo(checkResult == true &&
+                                ((hasHouse == true && hasCar == false) ||
+                                (hasHouse == false && hasCar == true)) &&
+                                monthlyIncome < 10000)
+    then
+        $c.setQuota(5000);
+end
+rule "如果申请人有房没车或者是没房但有车，月收入在10000~20000之间，那么发放的信用卡额度为8000"
+    salience 1
+    no-loop true
+    activation-group "quota_group"
+    when
+        $c:CreditCardApplyInfo(checkResult == true &&
+                                ((hasHouse == true && hasCar == false) ||
+                                (hasHouse == false && hasCar == true)) &&
+                                monthlyIncome >= 10000 &&
+                                monthlyIncome <= 20000)
+    then
+        $c.setQuota(8000);
+end
