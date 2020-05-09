@@ -7,6 +7,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
+/**
+ * 规则控制
+ * @author xuyisu
+ * @date 2020/05/10
+ */
 @RestController
 @RequestMapping("/rule")
 public class RuleController {

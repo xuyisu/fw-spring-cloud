@@ -1,5 +1,9 @@
 package com.yisu.drools.example.entity;
-
+/**
+ * 信用卡实体
+ * @author xuyisu
+ * @date 2020/05/10
+ */
 public class CreditCardApplyInfo {
     public static final String EDUCATION_1 = "专科以下";
     public static final String EDUCATION_2 = "专科";

@@ -19,6 +19,8 @@ import java.io.IOException;
 
 /**
  * 规则引擎配置类
+ * @author xuyisu
+ * @date 2020/05/10
  */
 @Configuration
 public class DroolsConfig {
