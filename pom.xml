@@ -31,6 +31,7 @@
         <module>fw-cloud-securitys</module>
         <module>fw-cloud-drools</module>
         <module>fw-cloud-starter-sample</module>
+        <module>fw-cloud-easyexcel</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -53,6 +54,7 @@
         <rocketmq.version>2.0.4</rocketmq.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
         <drools.version>7.7.0.Final</drools.version>
+        <easyexcel.version>2.2.3</easyexcel.version>
     </properties>
 
     <dependencyManagement>
