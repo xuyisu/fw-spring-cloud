@@ -5,8 +5,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
-import com.yisu.easyexcel.read.converter.DeleteConverter;
-import com.yisu.easyexcel.read.converter.DisabledConverter;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,7 +13,7 @@ import java.util.Date;
 @Data
 @TableName("sys_user")
 @EqualsAndHashCode(callSuper=false)
-public class SysUser extends Model<SysUserBak> {
+public class SysUserBak extends Model<SysUserBak> {
 
     /**
      * 主键
@@ -83,11 +81,11 @@ public class SysUser extends Model<SysUserBak> {
     /**
      * 删除标记(1 删除 0未删除)
      */
-    @ExcelProperty(index = 8,converter = DeleteConverter.class)
+    @ExcelProperty(index = 8)
     private Integer deleteFlag;
     /**
      * 启用标记(1 禁用 0启用)
      */
-    @ExcelProperty(index = 9,converter = DisabledConverter.class)
+    @ExcelProperty(index = 9)
     private Integer disableFlag;
 }
