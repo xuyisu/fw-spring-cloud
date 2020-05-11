@@ -15,6 +15,7 @@
         <module>fw-cloud-drools-learning</module>
         <module>fw-cloud-drools-workbench</module>
         <module>fw-cloud-drools-example</module>
+        <module>fw-cloud-drools-decision-table</module>
     </modules>
 
 
