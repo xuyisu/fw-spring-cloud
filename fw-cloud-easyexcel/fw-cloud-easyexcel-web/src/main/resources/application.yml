@@ -1,0 +1,20 @@
+spring:
+  #数据库配置  start
+  datasource:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:mysql://${dbIp}:3306/fw_jwt?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      hikari:
+          connection-timeout: 20000
+          auto-commit: true
+          max-lifetime: 1200000
+          minimum-idle: 5
+          maximum-pool-size: 12
+          idle-timeout: 300000
+server:
+    port: 8999
+logging:
+    level:
+        com.yisu: debug
