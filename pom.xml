@@ -50,7 +50,7 @@
         <hutool.version>5.2.5</hutool.version>
         <guava.version>22.0</guava.version>
         <HikariCP.version>2.7.9</HikariCP.version>
-        <druid.version>1.1.10</druid.version>
+        <druid.version>1.1.22</druid.version>
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <rocketmq.version>2.0.4</rocketmq.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
@@ -83,7 +83,32 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
+            <!--druid连接池-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+            <!-- Hikari连接池-->
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${HikariCP.version}</version>
+            </dependency>
 
+            <!-- 通用Mapper启动器 -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>${mybatis.plus.version}</version>
+            </dependency>
+
+            <!--多数据源-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
 
             <!-- lcn 依赖包 -->
             <dependency>
@@ -135,12 +160,7 @@
                 <version>${drools.version}</version>
             </dependency>
 
-            <!--多数据源-->
-            <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-                <version>${dynamic-datasource.version}</version>
-            </dependency>
+
         </dependencies>
     </dependencyManagement>
     <dependencies>
