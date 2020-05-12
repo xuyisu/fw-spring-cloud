@@ -17,7 +17,7 @@ import java.util.Date;
 @Data
 @TableName("sys_user")
 @EqualsAndHashCode(callSuper=false)
-public class SysUser extends Model<SysUserBak> {
+public class SysUser extends Model<SysUser> {
 
     /**
      * 主键
