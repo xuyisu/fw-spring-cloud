@@ -1,0 +1,27 @@
+server:
+  port: 9003
+spring:
+  #数据库配置  start
+  datasource:
+    dynamic:
+      primary: master #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #设置严格模式,默认false不启动. 启动后在未匹配到指定数据源时候回抛出异常,不启动会使用默认数据源.
+      datasource:
+        master:
+          driver-class-name: com.mysql.jdbc.Driver
+          password: 123456
+          url: jdbc:mysql://${dbIp}:3306/fw_jwt?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+          username: root
+        slave_1:
+          driver-class-name: com.mysql.jdbc.Driver
+          password: 123456
+          url: jdbc:mysql://${dbIp}:3306/slave_one?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+          username: root
+        slave_2:
+          driver-class-name: com.mysql.jdbc.Driver
+          password: 123456
+          url: jdbc:mysql://${dbIp}:3306/slave_two?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useSSL=false
+          username: root
+logging:
+  level:
+    com.yisu: debug

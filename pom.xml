@@ -32,6 +32,7 @@
         <module>fw-cloud-drools</module>
         <module>fw-cloud-starter-sample</module>
         <module>fw-cloud-easyexcel</module>
+        <module>fw-cloud-springboot/fw-springboot-dynamic-datasource</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -55,6 +56,7 @@
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
         <drools.version>7.7.0.Final</drools.version>
         <easyexcel.version>2.2.3</easyexcel.version>
+        <dynamic-datasource.version>3.1.0</dynamic-datasource.version>
     </properties>
 
     <dependencyManagement>
@@ -132,9 +134,25 @@
                 <artifactId>kie-spring</artifactId>
                 <version>${drools.version}</version>
             </dependency>
+
+            <!--多数据源-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -149,6 +167,7 @@
             <artifactId>spring-boot-configuration-processor</artifactId>
             <optional>true</optional>
         </dependency>
+
     </dependencies>
 
     <build>
