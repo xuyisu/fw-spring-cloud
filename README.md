@@ -48,6 +48,8 @@
 | 高级    | 分布式事务(MQ)  |  OK  |
 | 高级    | 分布式事务(LCN)  |  OK  |
 | 高级    | 分布式事务(Seata)  |  OK  |
+| 高级    | 规则引擎(Drools)  |  OK  |
+| 高级    | 系统安全(Security)  |  OK  |
 | 容器化   |   docker |   OK  |
 | 容器化   |   k8s|   OK  |
 
