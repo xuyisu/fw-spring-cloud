@@ -33,6 +33,7 @@
         <module>fw-cloud-starter-sample</module>
         <module>fw-cloud-easyexcel</module>
         <module>fw-cloud-springboot/fw-springboot-dynamic-datasource</module>
+        <module>fw-cloud-elasticsearch</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
