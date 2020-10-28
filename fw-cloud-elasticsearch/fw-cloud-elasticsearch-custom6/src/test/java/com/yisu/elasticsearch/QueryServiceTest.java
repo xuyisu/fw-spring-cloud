@@ -77,11 +77,19 @@ public class QueryServiceTest {
      * */
 
     @Test
-    public void testSelectById(){
+    public void testSelectByIdByMonth(){
         String index="search_index_"+ DateUtil.format(new Date(),"yyyy_MM");
         Es es = new Es(index,"search_index");
         List<Map<String, Object>> list = queryService
-                .queryListFromES(es, 1,"旗舰店"+1, "2010-10-25", "2020-10-26");
+                .queryListFromES(es, 2,"旗舰店"+2, "2010-10-27", "2020-10-29");
+        System.out.println(JSON.toJSONString(list));
+    }
+
+    @Test
+    public void testSelectById(){
+        Es es = new Es("search_index","search_index");
+        List<Map<String, Object>> list = queryService
+                .queryListFromES(es, 2,"旗舰店"+2, "2010-10-27", "2020-10-29");
         System.out.println(JSON.toJSONString(list));
     }
 
