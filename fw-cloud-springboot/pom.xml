@@ -20,5 +20,6 @@
         <module>fw-springboot-cache</module>
         <module>fw-springboot-sentinel</module>
         <module>fw-springboot-mongodb</module>
+        <module>fw-springboot-groovy</module>
     </modules>
 </project>

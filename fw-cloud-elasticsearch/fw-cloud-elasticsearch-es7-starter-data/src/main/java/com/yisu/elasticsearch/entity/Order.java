@@ -1,8 +1,10 @@
-package com.yisu.elasticsearch.Model;
+package com.yisu.elasticsearch.entity;
 
 import com.alibaba.fastjson.annotation.JSONField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.data.elasticsearch.annotations.Document;
+
 import java.util.Date;
 
 /**
@@ -10,8 +12,9 @@ import java.util.Date;
  * @date 2020/10/26
  */
 @Data
-@NoArgsConstructor
+@Document(indexName = "order_index_2022",type = "test", shards = 5, replicas = 0)
 public class Order {
+
 
     private long id;
 
@@ -54,18 +57,8 @@ public class Order {
      * 支付时间
      */
     @JSONField(name="pay_date")
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date payDate;
 
 
-    public Order(long id, int storeId, String storeName, int categoryId, String categoryCode, String productCode, int quantity, double amount, Date payDate) {
-        this.id = id;
-        this.storeId = storeId;
-        this.storeName = storeName;
-        this.categoryId = categoryId;
-        this.categoryCode = categoryCode;
-        this.productCode = productCode;
-        this.quantity = quantity;
-        this.amount = amount;
-        this.payDate = payDate;
-    }
 }

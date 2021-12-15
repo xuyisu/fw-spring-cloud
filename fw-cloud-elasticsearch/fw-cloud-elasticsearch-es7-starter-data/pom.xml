@@ -9,7 +9,9 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>fw-cloud-elasticsearch-custom6</artifactId>
+    <artifactId>fw-cloud-elasticsearch-es7-starter-data</artifactId>
+
+
 
     <dependencies>
         <dependency>
@@ -21,7 +23,6 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.78</version>
         </dependency>
-
     </dependencies>
 
 </project>
