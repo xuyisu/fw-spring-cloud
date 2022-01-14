@@ -21,5 +21,7 @@
         <module>fw-springboot-sentinel</module>
         <module>fw-springboot-mongodb</module>
         <module>fw-springboot-groovy</module>
+        <module>fw-springboot-dynamic-datasource</module>
+        <module>fw-springboot-socket</module>
     </modules>
 </project>

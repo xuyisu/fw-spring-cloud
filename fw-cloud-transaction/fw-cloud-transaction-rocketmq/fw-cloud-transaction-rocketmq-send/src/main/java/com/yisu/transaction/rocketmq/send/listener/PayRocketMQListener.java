@@ -1,7 +1,7 @@
 package com.yisu.transaction.rocketmq.send.listener;
 
 import com.yisu.transacation.base.dao.model.FwTradeLog;
-import com.yisu.transaction.rocketmq.send.service.PayService;
+import com.yisu.transaction.rocketmq.send.service.SendService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.rocketmq.spring.annotation.RocketMQMessageListener;
 import org.apache.rocketmq.spring.core.RocketMQListener;
@@ -18,13 +18,13 @@ import org.springframework.stereotype.Component;
 public class PayRocketMQListener implements RocketMQListener<FwTradeLog> {
 
     @Autowired
-    private PayService payService;
+    private SendService sendService;
 
 
     @Override
     public void onMessage(FwTradeLog fwTradeLog) {
         log.info("监听到用户已经下单成功订单id=>{}，名称=>{}的商品", fwTradeLog.getOrderId(), fwTradeLog.getProductName());
-        payService.payOrder(fwTradeLog);
+        sendService.sendOrder(fwTradeLog);
     }
 
 }

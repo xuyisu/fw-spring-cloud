@@ -3,27 +3,27 @@ package com.yisu.transaction.rocketmq.send.service.impl;
 import com.yisu.transacation.base.dao.enums.StatusEnum;
 import com.yisu.transacation.base.dao.model.FwTradeLog;
 import com.yisu.transacation.base.dao.service.FwTradeLogService;
-import com.yisu.transaction.rocketmq.send.service.PayService;
+import com.yisu.transaction.rocketmq.send.service.SendService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 /**
- * @description 商品表-业务实现
+ * @description 业务实现
  * @author xuyisu
  * @date '2020-03-25'
  */
 @Service
 @Slf4j
-public class PayServiceImpl implements PayService {
+public class SendServiceImpl implements SendService {
 
     @Autowired
     private FwTradeLogService fwTradeLogService;
 
     @Override
     @Transactional
-    public void payOrder(FwTradeLog fwTradeLog) {
+    public void sendOrder(FwTradeLog fwTradeLog) {
         fwTradeLog.setStatus(StatusEnum.THREE.getValue());
         fwTradeLog.setStatusDsc(StatusEnum.THREE.getDesc());
         fwTradeLogService.save(fwTradeLog);

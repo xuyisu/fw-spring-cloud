@@ -8,9 +8,9 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
+        <module>fw-cloud-feign</module>
         <module>fw-cloud-register</module>
         <module>fw-cloud-client</module>
-        <module>fw-cloud-feign</module>
         <module>fw-cloud-ribbon</module>
         <module>fw-cloud-gateways</module>
         <module>fw-cloud-config-center</module>
@@ -32,7 +32,6 @@
         <module>fw-cloud-drools</module>
         <module>fw-cloud-starter-sample</module>
         <module>fw-cloud-easyexcel</module>
-        <module>fw-cloud-springboot/fw-springboot-dynamic-datasource</module>
         <module>fw-cloud-elasticsearch</module>
     </modules>
     <parent>
@@ -191,14 +190,14 @@
 
     </dependencies>
 
-    <build>
+    <!--<build>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
         </plugins>
-    </build>
+    </build>-->
 
     <repositories>
         <!--阿里云主仓库，代理了maven central和jcenter仓库-->
