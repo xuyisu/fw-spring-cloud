@@ -54,7 +54,7 @@
         <mybatis.plus.version>3.2.0</mybatis.plus.version>
         <rocketmq.version>2.0.4</rocketmq.version>
         <codingapi.txlcn.version>5.0.2.RELEASE</codingapi.txlcn.version>
-        <drools.version>7.7.0.Final</drools.version>
+        <drools.version>7.60.0.Final</drools.version>
         <easyexcel.version>2.2.3</easyexcel.version>
         <dynamic-datasource.version>3.1.0</dynamic-datasource.version>
     </properties>
