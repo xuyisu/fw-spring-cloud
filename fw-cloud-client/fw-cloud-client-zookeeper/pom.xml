@@ -11,7 +11,7 @@
 
     <artifactId>fw-cloud-client-zookeeper</artifactId>
     <properties>
-        <zookeeper.version>3.5.5</zookeeper.version>
+        <zookeeper.version>3.7.2</zookeeper.version>
         <ackson-core-asl.version>1.9.13</ackson-core-asl.version>
     </properties>
 
